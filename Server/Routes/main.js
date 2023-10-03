@@ -6,23 +6,37 @@ const path = require("path");
 const postsDataPath = path.join(__dirname, "../data/blogginnlegg.json");
 
 // GET - Hente alle blogginnlegg
-router.get("/", (req, res) => {
-  const posts = JSON.parse(fs.readFileSync(postsDataPath, "utf-8"));
-  res.render("index", { posts: posts });
-});
-
-// GET - Vise et bestemt blogginnlegg basert på dets ID
-router.get("/post/:id", (req, res) => {
-  const posts = JSON.parse(fs.readFileSync(postsDataPath, "utf-8"));
-  const post = posts.find((p) => p.id === parseInt(req.params.id));
-  if (!post) return res.status(404).send("Innlegget ble ikke funnet.");
-  res.render("post", { post: post });
-});
-
-// Rute for å hente alle blogginnlegg som JSON
 router.get("/api/posts", (req, res) => {
   const posts = JSON.parse(fs.readFileSync(postsDataPath, "utf-8"));
   res.json(posts);
+});
+
+// POST - "Like" et innlegg
+router.post("/api/like/:id", (req, res) => {
+  const postId = parseInt(req.params.id);
+  const posts = JSON.parse(fs.readFileSync(postsDataPath, "utf-8"));
+  const post = posts.find((p) => p.id === postId);
+  if (!post) return res.status(404).send("Innlegget ble ikke funnet.");
+  post.likes += 1;
+  fs.writeFileSync(postsDataPath, JSON.stringify(posts, null, 2));
+  res.json({ likes: post.likes });
+});
+
+// POST - Legge til en kommentar
+router.post("/api/comment/:id", (req, res) => {
+  const postId = parseInt(req.params.id);
+  const comment = req.body.comment;
+  const posts = JSON.parse(fs.readFileSync(postsDataPath, "utf-8"));
+  const post = posts.find((p) => p.id === postId);
+  if (!post) return res.status(404).send("Innlegget ble ikke funnet.");
+  post.comments.push(comment);
+  fs.writeFileSync(postsDataPath, JSON.stringify(posts, null, 2));
+  res.json({ comment: comment });
+});
+
+// GET - Hovedsiden
+router.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../views/index.html"));
 });
 
 module.exports = router;
