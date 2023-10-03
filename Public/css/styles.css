@@ -40,17 +40,23 @@ main {
 }
 
 .bio {
-  flex: 1; /* This means 20% of the width */
+  width: 10%;
   padding-right: 20px;
   background-color: #f4f4f4;
   border-right: 1px solid #ddd;
 }
 
 .blog-content {
-  flex: 4; /* This means 80% of the width */
+  width: auto;
   padding-left: 20px;
   margin: 0 auto;
   max-width: 1000px;
+}
+
+.profile-image {
+  margin-top: 25px;
+  width: 60px;
+  height: 60px;
 }
 
 footer {
@@ -91,11 +97,4 @@ footer {
 .post {
   text-align: center;
   margin-bottom: 20px;
-}
-
-.profile-image {
-  width: 80px; /* Adjusted the width */
-  height: 80px; /* Adjusted the height */
-  border-radius: 50%;
-  margin-bottom: 10px;
 }
