@@ -1,0 +1,11 @@
+{
+  "name": "blogghell",
+  "version": "1.0.0",
+  "description": "arbeidskrav_1_webteknologi_nodeexpress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tommy S",
+  "license": "ISC"
+}
