@@ -4,11 +4,10 @@
     "title": "Første innlegg",
     "content": "Dette er innholdet i det førsdasdasdsste innlegget.",
     "date": "2023-04-01T12:00:00Z",
-    "likes": 4,
+    "likes": 19,
     "comments": [
-      "dasd",
-      "dasd",
-      "dasd"
+      "dasdas",
+      "dasdas"
     ]
   },
   {
@@ -25,6 +24,14 @@
     "content": "Dette er innholdet i det das dasdad innlegget.",
     "date": "2023-04-01T12:00:00Z",
     "likes": 0,
+    "comments": []
+  },
+  {
+    "id": 4,
+    "title": "Tredje innlegg",
+    "content": "Dette er innholdet i det das dasdad innlegget.",
+    "date": "2023-04-01T12:00:00Z",
+    "likes": 3,
     "comments": []
   }
 ]
