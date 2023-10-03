@@ -36,7 +36,9 @@ router.post("/api/like/:id", async (req, res) => {
 router.post("/api/comment/:id", async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
-    const comment = req.body.comment;
+    const { name, time, content } = req.body;
+    const comment = { name, time, content };
+
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
