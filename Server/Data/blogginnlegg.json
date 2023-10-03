@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "Første innlegg",
+    "content": "Dette er innholdet i det første innlegget.",
+    "date": "2023-10-01T12:00:00Z",
+    "likes": 10,
+    "comments": [
+      {
+        "user": "Ola",
+        "comment": "Flott innlegg!"
+      },
+      {
+        "user": "Kari",
+        "comment": "Interessant lesning."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Andre innlegg",
+    "content": "Dette er innholdet i det andre innlegget.",
+    "date": "2023-10-02T14:30:00Z",
+    "likes": 5,
+    "comments": [
+      {
+        "user": "Per",
+        "comment": "Bra skrevet!"
+      }
+    ]
+  }
+]

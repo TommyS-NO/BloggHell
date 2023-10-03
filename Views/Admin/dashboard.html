@@ -10,15 +10,10 @@
     <p>Velkommen til administratordashbordet!</p>
 
     <h2>Dine blogginnlegg:</h2>
-    <% if (posts && posts.length > 0) { %>
-    <ul>
-      <% posts.forEach(post => { %>
-      <li><%= post.title %></li>
-      <% }); %>
+
+    <ul id="postList">
+      <!-- Posts will be added here using JavaScript -->
     </ul>
-    <% } else { %>
-    <p>Du har ingen blogginnlegg ennå.</p>
-    <% } %>
 
     <a href="/add-post">Legg til nytt blogginnlegg</a>
   </body>
