@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BloggHell - <%= post.title %></title>
+    <title>BloggHell - Hjem</title>
   </head>
   <body>
-    <h1><%= post.title %></h1>
+    <h1>Velkommen til BloggHell</h1>
+    <% posts.forEach(post => { %>
+    <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
     <p><%= post.content %></p>
-    <a href="/">Tilbake til hovedsiden</a>
+    <hr />
+    <% }); %>
   </body>
 </html>

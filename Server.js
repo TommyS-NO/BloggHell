@@ -5,6 +5,9 @@ const path = require("path");
 const app = express();
 const PORT = 3234; //postnummer for MORROskyld
 
+const mainRoutes = require("./server/routes/main");
+app.use("/", mainRoutes);
+
 //Middleware
 
 app.use(express.json());
