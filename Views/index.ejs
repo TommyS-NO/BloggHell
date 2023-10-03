@@ -6,11 +6,16 @@
     <title>BloggHell - Hjem</title>
   </head>
   <body>
-    <h1>Velkommen til BloggHell</h1>
-    <% posts.forEach(post => { %>
-    <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
-    <p><%= post.content %></p>
-    <hr />
-    <% }); %>
+    <header>
+      <h1>Velkommen til BloggHell</h1>
+      <a href="/admin">Admin Login</a>
+    </header>
+    <main>
+      <% posts.forEach(post => { %>
+      <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+      <p><%= post.content %></p>
+      <hr />
+      <% }); %>
+    </main>
   </body>
 </html>
