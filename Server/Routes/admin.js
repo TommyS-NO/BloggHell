@@ -8,6 +8,9 @@ const postsDataPath = path.join(__dirname, "../data/blogginnlegg.json");
 
 // GET Admin Login Page
 router.get("/admin", (req, res) => {
+  if (req.session.isAuthenticated) {
+    return res.redirect("/admin.html");
+  }
   res.render("admin/index", { error: req.session.error });
   req.session.error = null; // Clear the error after displaying it
 });
@@ -27,7 +30,7 @@ router.post("/admin", (req, res) => {
 
   if (username === adminData.username && password === adminData.password) {
     req.session.isAuthenticated = true;
-    res.redirect("/dashboard");
+    res.redirect("/admin.html");
   } else {
     req.session.error = "Feil brukernavn eller passord.";
     res.redirect("/admin");
@@ -35,12 +38,12 @@ router.post("/admin", (req, res) => {
 });
 
 // GET Admin Dashboard
-router.get("/dashboard", (req, res) => {
+router.get("/admin.html", (req, res) => {
   if (!req.session.isAuthenticated) {
     return res.redirect("/admin");
   }
   const posts = JSON.parse(fs.readFileSync(postsDataPath, "utf-8"));
-  res.render("admin/dashboard", { posts });
+  res.render("admin/admin", { posts });
 });
 
 // GET Add New Post
@@ -65,7 +68,7 @@ router.post("/add-post", (req, res) => {
   const posts = JSON.parse(fs.readFileSync(postsDataPath, "utf-8"));
   posts.push(newPost);
   fs.writeFileSync(postsDataPath, JSON.stringify(posts, null, 4));
-  res.redirect("/dashboard");
+  res.redirect("/admin.html");
 });
 
 module.exports = router;

@@ -1,3 +1,13 @@
+function showLoginPopup() {
+  const popup = document.getElementById("loginPopup");
+  popup.style.display = "block";
+}
+
+function hideLoginPopup() {
+  const popup = document.getElementById("loginPopup");
+  popup.style.display = "none";
+}
+
 function fetchAndDisplayPosts() {
   fetch("/api/posts")
     .then((response) => response.json())

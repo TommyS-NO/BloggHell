@@ -1,10 +1,11 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #b14a4a;
 }
 
 header {
@@ -26,7 +27,7 @@ header h1 {
 }
 
 .admin-login {
-  background-color: red;
+  background-color: rgb(175, 103, 103);
   padding: 5px 10px;
   border-radius: 5px;
   text-decoration: none;
@@ -40,23 +41,28 @@ main {
 }
 
 .bio {
-  width: 10%;
+  width: 25%;
   padding-right: 20px;
   background-color: #f4f4f4;
   border-right: 1px solid #ddd;
 }
 
 .blog-content {
-  width: auto;
+  width: 75%;
   padding-left: 20px;
   margin: 0 auto;
-  max-width: 1000px;
+  background-color: #c4aeae;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image {
-  margin-top: 25px;
+  margin-top: 35px;
+  margin-left: 5px;
   width: 60px;
   height: 60px;
+  cursor: pointer;
 }
 
 footer {
@@ -87,14 +93,69 @@ footer {
 }
 
 .comment {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dashed #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.comment li {
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.comment li:last-child {
+  border-bottom: none;
 }
 
 .post {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.comment-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  margin: 0;
+}
+
+/* New styles for the login popup */
+.login-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.login-popup span {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.login-popup input[type="text"],
+.login-popup input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.login-popup input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }
