@@ -4,15 +4,21 @@
     "title": "Vårens teknologitrender",
     "content": "Våren bringer ikke bare blomster, men også nye teknologitrender. Fra AI til blockchain, her er hva du kan forvente i 2023.",
     "date": "2023-04-01T12:00:00Z",
-    "likes": 31,
-    "comments": []
+    "likes": 3,
+    "comments": [
+      {
+        "name": "gfdg",
+        "time": "5.10.2023, 12:21:21",
+        "content": "Fin post dete vel"
+      }
+    ]
   },
   {
     "id": 2,
     "title": "Reiseliv etter pandemien",
     "content": "Reiselivet har endret seg drastisk etter pandemien. Her er noen tips for trygg og ansvarlig reising i den nye normalen.",
     "date": "2023-04-02T12:00:00Z",
-    "likes": [],
+    "likes": 4,
     "comments": []
   },
   {
@@ -20,7 +26,7 @@
     "title": "Bærekraftig mote",
     "content": "Bærekraft er det nye svarte. Lær hvordan moteindustrien tar skritt for å bli mer miljøvennlig.",
     "date": "2023-04-03T12:00:00Z",
-    "likes": "11111111",
+    "likes": 3,
     "comments": []
   },
   {
@@ -28,15 +34,21 @@
     "title": "Kaffeens kultur",
     "content": "Kaffe er mer enn bare en drikk. Dykk ned i kaffens rike historie og dens innflytelse på kulturer over hele verden.",
     "date": "2023-04-04T12:00:00Z",
-    "likes": "111",
-    "comments": []
+    "likes": 2,
+    "comments": [
+      {
+        "name": "fsdfsdf",
+        "time": "5.10.2023, 12:21:48",
+        "content": "fsdfsdf"
+      }
+    ]
   },
   {
     "id": 5,
     "title": "Moderne kunstens innflytelse",
     "content": "Fra gatekunst til digitale mesterverk, moderne kunst fortsetter å forme og utfordre vår oppfatning av verden.",
     "date": "2023-04-05T12:00:00Z",
-    "likes": "11",
+    "likes": [],
     "comments": []
   },
   {

@@ -16,7 +16,6 @@ router.get("/api/posts", async (req, res) => {
   }
 });
 
-// POST - "Like" et innlegg
 router.post("/api/like/:id", async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
@@ -24,7 +23,7 @@ router.post("/api/like/:id", async (req, res) => {
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
     if (!post) return res.status(404).send("Innlegget ble ikke funnet.");
-    post.likes += 1;
+    post.likes = Number(post.likes) + 1; // Ensure post.likes is a number
     await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
     res.json({ likes: post.likes });
   } catch (error) {
@@ -45,7 +44,11 @@ router.post("/api/comment/:id", async (req, res) => {
     if (!post) return res.status(404).send("Innlegget ble ikke funnet.");
     post.comments.push(comment);
     await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
-    res.json({ comment: comment });
+    res.json({
+      name: comment.name,
+      time: comment.time,
+      content: comment.content,
+    }); // Updated response format
   } catch (error) {
     res.status(500).send("Server error");
   }

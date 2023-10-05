@@ -8,14 +8,14 @@ function hideLoginPopup() {
   popup.style.display = "none";
 }
 
-function fetchAndDisplayPosts() {
-  fetch("/api/posts")
-    .then((response) => response.json())
-    .then((posts) => {
-      const postContainer = document.getElementById("postContainer");
-      let html = "";
-      posts.forEach((post) => {
-        html += `
+async function fetchAndDisplayPosts() {
+  try {
+    const response = await fetch("/api/posts");
+    const posts = await response.json();
+    const postContainer = document.getElementById("postContainer");
+    let html = "";
+    posts.forEach((post) => {
+      html += `
               <div class="post">
                 <h2>${post.title}</h2>
                 <p>${post.content}</p>
@@ -42,43 +42,62 @@ function fetchAndDisplayPosts() {
                 <hr />
               </div>
             `;
-      });
-      postContainer.innerHTML = html;
     });
+    postContainer.innerHTML = html;
+  } catch (error) {
+    console.error("Error fetching and displaying posts:", error);
+  }
 }
 
-function likePost(postId) {
-  fetch(`/api/like/${postId}`, {
-    method: "POST",
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      document.getElementById(`likes-${postId}`).innerText = data.likes;
+async function likePost(postId) {
+  try {
+    const response = await fetch(`/api/like/${postId}`, {
+      method: "POST",
     });
+    const data = await response.json();
+    document.getElementById(`likes-${postId}`).innerText = Number(data.likes);
+  } catch (error) {
+    console.error("Error liking post:", error);
+  }
 }
 
-function addComment(postId) {
+async function addComment(postId) {
   const commentName = document.getElementById(`comment-name-${postId}`).value;
   const commentText = document.getElementById(`comment-text-${postId}`).value;
   const commentTime = new Date().toLocaleString("no-NO", { hour12: false });
-  fetch(`/api/comment/${postId}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name: commentName,
-      time: commentTime,
-      content: commentText,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const commentList = document.getElementById(`comments-${postId}`);
-      const newComment = document.createElement("li");
-      newComment.innerHTML = `<strong>${data.name}</strong> kommenterte den ${data.time}: ${data.content}`;
-      commentList.appendChild(newComment);
+
+  const validChars = /^[a-zA-Z0-9æøåÆØÅ\s]+$/; // Tillater bokstaver, tall og mellomrom
+
+  if (!commentName.trim() || !commentText.trim()) {
+    alert("Både navn og kommentar må fylles ut.");
+    return;
+  }
+
+  if (!commentName.match(validChars) || !commentText.match(validChars)) {
+    alert("Ingen spesialtegn tillatt i navn eller kommentar.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`/api/comment/${postId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: commentName,
+        time: commentTime,
+        content: commentText,
+      }),
     });
+    const data = await response.json();
+    const commentList = document.getElementById(`comments-${postId}`);
+    const newComment = document.createElement("li");
+    newComment.innerHTML = `<strong>${data.name}</strong> kommenterte den ${data.time}: ${data.content}`;
+    commentList.appendChild(newComment);
+  } catch (error) {
+    console.error("Error adding comment:", error);
+  }
 }
 
 fetchAndDisplayPosts();

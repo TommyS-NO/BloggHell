@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
@@ -9,7 +11,7 @@ const PORT = 3234; //postnummer for MORROskyld
 // Set up session middleware
 app.use(
   session({
-    secret: "your-secret-key",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   })
@@ -20,11 +22,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
-// Set up HTML as the view engine using EJS's renderFile function
-app.engine("html", require("ejs").renderFile);
-app.set("view engine", "html");
-app.set("views", path.join(__dirname, "views"));
 
 // Routes
 const mainRoutes = require("./server/routes/main");
