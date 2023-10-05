@@ -4,12 +4,17 @@
     "title": "Vårens teknologitrender",
     "content": "Våren bringer ikke bare blomster, men også nye teknologitrender. Fra AI til blockchain, her er hva du kan forvente i 2023.",
     "date": "2023-04-01T12:00:00Z",
-    "likes": 3,
+    "likes": 7,
     "comments": [
       {
         "name": "gfdg",
         "time": "5.10.2023, 12:21:21",
         "content": "Fin post dete vel"
+      },
+      {
+        "name": "Stian",
+        "time": "5.10.2023, 12:29:54",
+        "content": "fsdfsdæåø"
       }
     ]
   },
@@ -27,7 +32,13 @@
     "content": "Bærekraft er det nye svarte. Lær hvordan moteindustrien tar skritt for å bli mer miljøvennlig.",
     "date": "2023-04-03T12:00:00Z",
     "likes": 3,
-    "comments": []
+    "comments": [
+      {
+        "name": "Tommy",
+        "time": "5.10.2023, 12:25:11",
+        "content": "FOr en Postjeg digger det HERREGUD FOR EN KAR DA DETTE R EJO HE LET L VPMSD "
+      }
+    ]
   },
   {
     "id": 4,

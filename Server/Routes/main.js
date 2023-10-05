@@ -23,7 +23,7 @@ router.post("/api/like/:id", async (req, res) => {
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
     if (!post) return res.status(404).send("Innlegget ble ikke funnet.");
-    post.likes = Number(post.likes) + 1; // Ensure post.likes is a number
+    post.likes = Number(post.likes) + 1;
     await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
     res.json({ likes: post.likes });
   } catch (error) {

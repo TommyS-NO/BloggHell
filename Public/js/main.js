@@ -66,15 +66,26 @@ async function addComment(postId) {
   const commentText = document.getElementById(`comment-text-${postId}`).value;
   const commentTime = new Date().toLocaleString("no-NO", { hour12: false });
 
-  const validChars = /^[a-zA-Z0-9æøåÆØÅ\s]+$/; // Tillater bokstaver, tall og mellomrom
+  const validNameChars = /^[a-zA-ZæøåÆØÅ\s]+$/;
+  const validCommentChars = /^[a-zA-Z0-9æøåÆØÅ\s.,]+$/;
 
+  // Sjekk om feltene er tomme
   if (!commentName.trim() || !commentText.trim()) {
     alert("Både navn og kommentar må fylles ut.");
     return;
   }
 
-  if (!commentName.match(validChars) || !commentText.match(validChars)) {
-    alert("Ingen spesialtegn tillatt i navn eller kommentar.");
+  // Validering av navn
+  if (!commentName.match(validNameChars)) {
+    alert("Ingen spesialtegn tillatt i navn.");
+    return;
+  }
+
+  // Validering av kommentartekst
+  if (!commentText.match(validCommentChars)) {
+    alert(
+      "Ugyldige tegn i kommentaren. Bare bokstaver, tall, punktum, komma og mellomrom er tillatt."
+    );
     return;
   }
 
