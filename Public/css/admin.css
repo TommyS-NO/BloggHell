@@ -1,0 +1,102 @@
+/* Reset and Global Styles */
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #b14a4a;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header h1 {
+  text-align: center;
+  flex-grow: 2;
+}
+
+.admin-logout {
+  background-color: rgb(175, 103, 103);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Main Content Styles */
+main {
+  display: flex;
+  flex-direction: column; /* Changed to column for admin layout */
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #c4aeae;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin Sections */
+section {
+  margin-bottom: 20px;
+}
+
+/* Post Management Section */
+.post-management {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-item {
+  width: 80%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.post-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.post-date {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Footer Styles */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
