@@ -15,11 +15,8 @@ async function ensureAuthenticated(req, res, next) {
   }
 }
 
-router.get("/", (req, res) => {
-  if (req.session.isAuthenticated) {
-    return res.sendFile(path.join(__dirname, "../../views/admin.html"));
-  }
-  res.redirect("/");
+router.get("/", ensureAuthenticated, (req, res) => {
+  res.sendFile(path.join(__dirname, "../../views/admin.html"));
 });
 
 router.post("/", async (req, res) => {
@@ -72,8 +69,24 @@ router.post("/api/new-post", ensureAuthenticated, async (req, res) => {
     res.status(500).send("Server error");
   }
 });
+router.put("/api/edit-post/:id", ensureAuthenticated, async (req, res) => {
+  try {
+    const postId = parseInt(req.params.id);
+    const { title, content } = req.body;
+    const posts = JSON.parse(await fs.readFile(postsDataPath, "utf-8"));
+    const post = posts.find((p) => p.id === postId);
+    if (!post) {
+      return res.status(404).send("Innlegget ble ikke funnet.");
+    }
+    post.title = title;
+    post.content = content;
+    await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 4));
+    res.json(post);
+  } catch (error) {
+    res.status(500).send("Server error");
+  }
+});
 
-// Ny rute for å slette et innlegg
 router.delete("/api/delete-post/:id", ensureAuthenticated, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
