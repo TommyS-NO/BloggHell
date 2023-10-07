@@ -1,35 +1,39 @@
 [
   {
+    "id": 1696710450852,
+    "title": "Test3 bloggen",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
+    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "views": 0,
+    "likes": 3
+  },
+  {
+    "id": 1696710085967,
+    "title": "fsdfsdfdf",
+    "content": "bvbf fsdfsdfsdf",
+    "dateCreated": "2023-10-07T20:21:25.967Z",
+    "views": 0,
+    "likes": 3
+  },
+  {
+    "id": 1696709871502,
+    "title": "dasdasd",
+    "content": "dasdasd",
+    "dateCreated": "2023-10-07T20:17:51.502Z",
+    "views": 0,
+    "likes": 0
+  },
+  {
     "id": 1,
     "title": "Vårens teknologitrender",
     "content": "Våren bringer ikke bare blomster, men også nye teknologitrender. Fra AI til blockchain, her er hva du kan forvente i 2023.",
     "date": "2023-04-01T12:00:00Z",
-    "likes": 10,
+    "likes": 5,
     "comments": [
       {
-        "name": "gfdg",
-        "time": "5.10.2023, 12:21:21",
-        "content": "Fin post dete vel"
-      },
-      {
-        "name": "Stian",
-        "time": "5.10.2023, 12:29:54",
-        "content": "fsdfsdæåø"
-      },
-      {
-        "name": "dasd",
-        "time": "5.10.2023, 21:54:45",
-        "content": "dasd"
-      },
-      {
-        "name": "j",
-        "time": "5.10.2023, 21:55:03",
-        "content": "\n\n\ngjhjgjhg"
-      },
-      {
-        "name": "dsad",
-        "time": "5.10.2023, 22:24:39",
-        "content": "dasdvcxvxcvb"
+        "name": "dsadasda",
+        "time": "7.10.2023, 22:26:30",
+        "content": "gfdgfghfh"
       }
     ]
   },
@@ -38,32 +42,22 @@
     "title": "Reiseliv etter pandemien",
     "content": "Reiselivet har endret seg drastisk etter pandemien. Her er noen tips for trygg og ansvarlig reising i den nye normalen.",
     "date": "2023-04-02T12:00:00Z",
-    "likes": 6,
-    "comments": []
+    "likes": 9,
+    "comments": [
+      {
+        "name": "dasdasd",
+        "time": "7.10.2023, 22:17:33",
+        "content": "dasdasda"
+      }
+    ]
   },
   {
     "id": 3,
     "title": "Bærekraftig mote",
     "content": "Bærekraft er det nye svarte. Lær hvordan moteindustrien tar skritt for å bli mer miljøvennlig.",
     "date": "2023-04-03T12:00:00Z",
-    "likes": 6,
-    "comments": [
-      {
-        "name": "Tommy",
-        "time": "5.10.2023, 12:25:11",
-        "content": "FOr en Postjeg digger det HERREGUD FOR EN KAR DA DETTE R EJO HE LET L VPMSD "
-      },
-      {
-        "name": "vxv",
-        "time": "5.10.2023, 22:24:49",
-        "content": "xc vbfdr"
-      },
-      {
-        "name": "vxv",
-        "time": "5.10.2023, 22:24:51",
-        "content": "xc vbfdr"
-      }
-    ]
+    "likes": 9,
+    "comments": []
   },
   {
     "id": 4,
@@ -71,13 +65,7 @@
     "content": "Kaffe er mer enn bare en drikk. Dykk ned i kaffens rike historie og dens innflytelse på kulturer over hele verden.",
     "date": "2023-04-04T12:00:00Z",
     "likes": 4,
-    "comments": [
-      {
-        "name": "fsdfsdf",
-        "time": "5.10.2023, 12:21:48",
-        "content": "fsdfsdf"
-      }
-    ]
+    "comments": []
   },
   {
     "id": 5,

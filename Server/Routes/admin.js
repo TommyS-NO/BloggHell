@@ -5,7 +5,7 @@ const path = require("path");
 const adminUsername = process.env.ADMIN_USERNAME;
 const adminPassword = process.env.ADMIN_PASSWORD;
 
-const postsDataPath = path.join(__dirname, "../data/blogginnlegg.json");
+const postsDataPath = path.join(__dirname, "../Data/blogginnlegg.json");
 
 async function ensureAuthenticated(req, res, next) {
   if (req.session.isAuthenticated) {
@@ -51,6 +51,7 @@ router.get("/add-post", ensureAuthenticated, (req, res) => {
 });
 
 router.post("/api/new-post", ensureAuthenticated, async (req, res) => {
+  console.log("Attempting to add a new post...");
   try {
     const { title, content } = req.body;
     const newPost = {

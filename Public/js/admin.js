@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const newPostForm = document.getElementById("newPostForm");
   const adminPostList = document.getElementById("adminPostList");
+  const postEditor = document.getElementById("postEditor");
 
   async function fetchPosts() {
     try {
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
           post.dateCreated
         ).toLocaleDateString()}`;
         listItem.addEventListener("click", function () {
-          showPostInPopup(post);
+          showPostInEditor(post);
         });
         adminPostList.appendChild(listItem);
       });
@@ -22,41 +23,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  async function showPostInPopup(post) {
-    const popup = document.createElement("div");
-    popup.classList.add("post-popup");
-    popup.innerHTML = `
-              <h2>${post.title}</h2>
-              <p>${post.content}</p>
-              <button id="editPost">Rediger</button>
-              <button id="deletePost">Slett</button>
-              <button id="closePopup">Lukk</button>
-          `;
-    document.body.appendChild(popup);
+  async function showPostInEditor(post) {
+    postEditor.innerHTML = `
+        <h2>Rediger innlegg</h2>
+        Tittel: <input type="text" id="editTitle" value="${post.title}">
+        Innhold: <textarea id="editContent">${post.content}</textarea>
+        <button id="saveEdit">Lagre endringer</button>
+        <button id="deletePost">Slett</button>
+      `;
 
     document
-      .getElementById("editPost")
+      .getElementById("saveEdit")
       .addEventListener("click", async function () {
-        const title = prompt("Endre tittel:", post.title);
-        const content = prompt("Endre innhold:", post.content);
-        if (title && content) {
-          try {
-            const response = await fetch(`/api/edit-post/${post.id}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ title, content }),
-            });
-            if (response.ok) {
-              alert("Innlegget ble oppdatert.");
-              fetchPosts();
-            } else {
-              alert("Kunne ikke oppdatere innlegget.");
-            }
-          } catch (error) {
-            console.error("Error updating post:", error);
+        const updatedTitle = document.getElementById("editTitle").value;
+        const updatedContent = document.getElementById("editContent").value;
+        try {
+          const response = await fetch(`/api/edit-post/${post.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              title: updatedTitle,
+              content: updatedContent,
+            }),
+          });
+          if (response.ok) {
+            alert("Innlegget ble oppdatert.");
+            fetchPosts();
+          } else {
+            alert("Kunne ikke oppdatere innlegget.");
           }
+        } catch (error) {
+          console.error("Error updating post:", error);
         }
       });
 
@@ -70,19 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
           if (response.ok) {
             alert("Innlegget ble slettet.");
             fetchPosts();
-            document.body.removeChild(popup);
           } else {
             alert("Kunne ikke slette innlegget.");
           }
         } catch (error) {
           console.error("Error deleting post:", error);
         }
-      });
-
-    document
-      .getElementById("closePopup")
-      .addEventListener("click", function () {
-        document.body.removeChild(popup);
       });
   }
 
@@ -93,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const content = document.getElementById("content").value;
 
     try {
-      const response = await fetch("/api/new-post", {
+      const response = await fetch("/admin/api/new-post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,15 +95,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const newPost = await response.json();
       const listItem = document.createElement("li");
-      listItem.innerHTML = `<strong>${newPost.title}</strong> - ${new Date(
-        newPost.dateCreated
-      ).toLocaleDateString()}`;
+      const date = newPost.dateCreated
+        ? new Date(newPost.dateCreated).toLocaleDateString()
+        : "Ukjent dato";
+      listItem.innerHTML = `<strong>${newPost.title}</strong> - ${date}`;
+
       listItem.addEventListener("click", function () {
-        showPostInPopup(newPost);
+        showPostInEditor(newPost);
       });
       adminPostList.appendChild(listItem);
     } catch (error) {
       console.error("Error adding new post:", error);
+      res.status(500).send("server error");
     }
   });
 

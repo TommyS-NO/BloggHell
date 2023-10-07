@@ -15,6 +15,14 @@ async function fetchAndDisplayPosts() {
     const postContainer = document.getElementById("postContainer");
     let html = "";
     posts.forEach((post) => {
+      const commentsHtml = post.comments
+        ? post.comments
+            .map(
+              (comment) =>
+                `<li><strong>${comment.name}</strong> kommenterte den ${comment.time}: ${comment.content}</li>`
+            )
+            .join("")
+        : "";
       html += `
               <div class="post">
                 <h2>${post.title}</h2>
@@ -26,12 +34,7 @@ async function fetchAndDisplayPosts() {
                 <div>
                   <h3>Kommentarer:</h3>
                   <ul id="comments-${post.id}">
-                    ${post.comments
-                      .map(
-                        (comment) =>
-                          `<li><strong>${comment.name}</strong> kommenterte den ${comment.time}: ${comment.content}</li>`
-                      )
-                      .join("")}
+                    ${commentsHtml}
                   </ul>
                   Navn: <input type="text" id="comment-name-${post.id}" />
                   <textarea id="comment-text-${post.id}"></textarea>
