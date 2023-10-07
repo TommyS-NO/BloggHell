@@ -51,7 +51,7 @@ router.get("/add-post", ensureAuthenticated, (req, res) => {
 });
 
 router.post("/api/new-post", ensureAuthenticated, async (req, res) => {
-  console.log("Attempting to add a new post...");
+  console.log("Inside /api/new-post route");
   try {
     const { title, content } = req.body;
     const newPost = {
@@ -67,7 +67,8 @@ router.post("/api/new-post", ensureAuthenticated, async (req, res) => {
     await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 4));
     res.json(newPost);
   } catch (error) {
-    res.status(500).send("Server error");
+    console.error("Error in /api/new-post:", error);
+    res.status(500).json({ error: "Server error" }); // Send JSON-respons ved feil
   }
 });
 router.put("/api/edit-post/:id", ensureAuthenticated, async (req, res) => {

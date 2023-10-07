@@ -1,86 +1,75 @@
 [
   {
-    "id": 1696710450852,
+    "id": 16967104508522,
     "title": "Test3 bloggen",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
     "dateCreated": "2023-10-07T20:27:30.852Z",
     "views": 0,
-    "likes": 3
-  },
-  {
-    "id": 1696710085967,
-    "title": "fsdfsdfdf",
-    "content": "bvbf fsdfsdfsdf",
-    "dateCreated": "2023-10-07T20:21:25.967Z",
-    "views": 0,
-    "likes": 3
-  },
-  {
-    "id": 1696709871502,
-    "title": "dasdasd",
-    "content": "dasdasd",
-    "dateCreated": "2023-10-07T20:17:51.502Z",
-    "views": 0,
-    "likes": 0
-  },
-  {
-    "id": 1,
-    "title": "Vårens teknologitrender",
-    "content": "Våren bringer ikke bare blomster, men også nye teknologitrender. Fra AI til blockchain, her er hva du kan forvente i 2023.",
-    "date": "2023-04-01T12:00:00Z",
-    "likes": 5,
+    "likes": 13,
     "comments": [
       {
-        "name": "dsadasda",
-        "time": "7.10.2023, 22:26:30",
-        "content": "gfdgfghfh"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Reiseliv etter pandemien",
-    "content": "Reiselivet har endret seg drastisk etter pandemien. Her er noen tips for trygg og ansvarlig reising i den nye normalen.",
-    "date": "2023-04-02T12:00:00Z",
-    "likes": 9,
-    "comments": [
+        "name": "dadasd",
+        "time": "7.10.2023, 22:48:51",
+        "content": "dasdsad"
+      },
       {
         "name": "dasdasd",
-        "time": "7.10.2023, 22:17:33",
-        "content": "dasdasda"
+        "time": "7.10.2023, 22:54:06",
+        "content": "dasdas"
+      },
+      {
+        "name": "Stian",
+        "time": "7.10.2023, 23:03:06",
+        "content": "Hater Blogg"
       }
     ]
   },
   {
-    "id": 3,
-    "title": "Bærekraftig mote",
-    "content": "Bærekraft er det nye svarte. Lær hvordan moteindustrien tar skritt for å bli mer miljøvennlig.",
-    "date": "2023-04-03T12:00:00Z",
+    "id": 169677900450852,
+    "title": "Test3 bloggen",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
+    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "views": 0,
+    "likes": 7,
+    "comments": []
+  },
+  {
+    "id": 1691710450852,
+    "title": "Test3 bloggen",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
+    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "views": 0,
+    "likes": 7,
+    "comments": [
+      {
+        "name": "dasda",
+        "time": "7.10.2023, 22:54:11",
+        "content": "dasdas"
+      }
+    ]
+  },
+  {
+    "id": 1996710450852,
+    "title": "Test3 bloggen",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
+    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "views": 0,
     "likes": 9,
-    "comments": []
+    "comments": [
+      {
+        "name": "dasdsa",
+        "time": "7.10.2023, 22:47:28",
+        "content": "dasdas"
+      }
+    ]
   },
   {
-    "id": 4,
-    "title": "Kaffeens kultur",
-    "content": "Kaffe er mer enn bare en drikk. Dykk ned i kaffens rike historie og dens innflytelse på kulturer over hele verden.",
-    "date": "2023-04-04T12:00:00Z",
-    "likes": 4,
-    "comments": []
-  },
-  {
-    "id": 5,
-    "title": "Moderne kunstens innflytelse",
-    "content": "Fra gatekunst til digitale mesterverk, moderne kunst fortsetter å forme og utfordre vår oppfatning av verden.",
-    "date": "2023-04-05T12:00:00Z",
-    "likes": [],
-    "comments": []
-  },
-  {
-    "id": 6,
-    "title": "Musikkens evolusjon",
-    "content": "Musikk har alltid vært en refleksjon av tiden. Utforsk hvordan musikken har endret seg gjennom årene og hvor den er på vei.",
-    "date": "2023-04-06T12:00:00Z",
-    "likes": [],
+    "id": 1696710450662,
+    "title": "Test3 bloggen",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
+    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "views": 0,
+    "likes": 7,
     "comments": []
   }
 ]

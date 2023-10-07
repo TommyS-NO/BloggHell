@@ -10,6 +10,15 @@ router.get("/api/posts", async (req, res) => {
   try {
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
+
+    posts.forEach((post) => {
+      if (!post.comments) post.comments = [];
+      if (post.date && !post.dateCreated) {
+        post.dateCreated = post.date;
+        delete post.date;
+      }
+    });
+    await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
     res.json(posts);
   } catch (error) {
     res.status(500).send("Server error");
@@ -48,7 +57,7 @@ router.post("/api/comment/:id", async (req, res) => {
       name: comment.name,
       time: comment.time,
       content: comment.content,
-    }); // Updated response format
+    });
   } catch (error) {
     res.status(500).send("Server error");
   }

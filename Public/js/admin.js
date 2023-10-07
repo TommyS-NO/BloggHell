@@ -93,6 +93,10 @@ document.addEventListener("DOMContentLoaded", function () {
         body: JSON.stringify({ title, content }),
       });
 
+      if (!response.ok) {
+        throw new Error(`Server responded with ${response.status}`);
+      }
+      console.log("Response from server:", response);
       const newPost = await response.json();
       const listItem = document.createElement("li");
       const date = newPost.dateCreated
@@ -106,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
       adminPostList.appendChild(listItem);
     } catch (error) {
       console.error("Error adding new post:", error);
-      res.status(500).send("server error");
     }
   });
 
