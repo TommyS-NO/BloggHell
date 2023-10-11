@@ -35,7 +35,7 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-// GET - Hente alle innlegg for admin
+// GET - Hente alle
 router.get("/get-all-posts", ensureAdmin, async (req, res) => {
   try {
     const data = await fs.readFile(postsDataPath, "utf-8");
@@ -46,7 +46,7 @@ router.get("/get-all-posts", ensureAdmin, async (req, res) => {
   }
 });
 
-// GET - Hente et spesifikt innlegg for redigering
+// GET - Hente
 router.get("/get-post/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
@@ -60,7 +60,7 @@ router.get("/get-post/:id", ensureAdmin, async (req, res) => {
   }
 });
 
-// POST - Opprett nytt blogginnlegg
+// POST - Opprett
 router.post("/create-post", ensureAdmin, async (req, res) => {
   try {
     const { title, content } = req.body;
@@ -84,7 +84,7 @@ router.post("/create-post", ensureAdmin, async (req, res) => {
   }
 });
 
-// PUT - Oppdater et blogginnlegg
+// PUT - Oppdater
 router.put("/update-post/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
@@ -104,7 +104,7 @@ router.put("/update-post/:id", ensureAdmin, async (req, res) => {
   }
 });
 
-// DELETE - Slett et blogginnlegg/kommentar
+// DELETE
 router.delete("/delete-post/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
