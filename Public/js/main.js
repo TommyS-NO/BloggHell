@@ -1,3 +1,7 @@
+// ---------------------
+// UI Functions
+// ---------------------
+
 function showLoginPopup() {
   const popup = document.getElementById("loginPopup");
   popup.style.display = "block";
@@ -8,12 +12,17 @@ function hideLoginPopup() {
   popup.style.display = "none";
 }
 
+// ---------------------
+// Post Display Functions
+// ---------------------
+
 async function fetchAndDisplayPosts() {
   try {
     const response = await fetch("/posts");
     const posts = await response.json();
     const postContainer = document.getElementById("postContainer");
     let html = "";
+
     posts.forEach((post) => {
       const commentsHtml = post.comments
         ? post.comments
@@ -23,35 +32,42 @@ async function fetchAndDisplayPosts() {
             )
             .join("")
         : "";
-      html += `
-              <div class="post">
-                <h2>${post.title}</h2>
-                <p>${post.content}</p>
-                <p>Dato: ${new Date(post.dateCreated).toLocaleDateString()}</p>
 
-                <button onclick="likePost(${post.id})">Like</button> 
-                <span id="likes-${post.id}">${post.likes}</span> Likes
-                <hr />
-                <div>
-                  <h3>Kommentarer:</h3>
-                  <ul id="comments-${post.id}">
-                    ${commentsHtml}
-                  </ul>
-                  Navn: <input type="text" id="comment-name-${post.id}" />
-                  <textarea id="comment-text-${post.id}"></textarea>
-                  <button onclick="addComment(${
-                    post.id
-                  })">Legg til kommentar</button>
-                </div>
-                <hr />
-              </div>
-            `;
+      html += generatePostHtml(post, commentsHtml);
     });
+
     postContainer.innerHTML = html;
   } catch (error) {
     console.error("Error fetching and displaying posts:", error);
   }
 }
+
+function generatePostHtml(post, commentsHtml) {
+  return `
+    <div class="post">
+      <h2>${post.title}</h2>
+      <p>${post.content}</p>
+      <p>Dato: ${new Date(post.dateCreated).toLocaleDateString()}</p>
+      <button onclick="likePost(${post.id})">Like</button> 
+      <span id="likes-${post.id}">${post.likes}</span> Likes
+      <hr />
+      <div>
+        <h3>Kommentarer:</h3>
+        <ul id="comments-${post.id}">
+          ${commentsHtml}
+        </ul>
+        Navn: <input type="text" id="comment-name-${post.id}" />
+        <textarea id="comment-text-${post.id}"></textarea>
+        <button onclick="addComment(${post.id})">Legg til kommentar</button>
+      </div>
+      <hr />
+    </div>
+  `;
+}
+
+// ---------------------
+// Post Interaction Functions
+// ---------------------
 
 async function likePost(postId) {
   try {
@@ -66,8 +82,10 @@ async function likePost(postId) {
 }
 
 async function addComment(postId) {
-  const commentName = document.getElementById(`comment-name-${postId}`).value;
-  const commentText = document.getElementById(`comment-text-${postId}`).value;
+  const commentNameInput = document.getElementById(`comment-name-${postId}`);
+  const commentTextInput = document.getElementById(`comment-text-${postId}`);
+  const commentName = commentNameInput.value;
+  const commentText = commentTextInput.value;
   const commentTime = new Date().toLocaleString("no-NO", { hour12: false });
 
   const validNameChars = /^[a-zA-ZæøåÆØÅ\s]+$/;
@@ -110,9 +128,17 @@ async function addComment(postId) {
     const newComment = document.createElement("li");
     newComment.innerHTML = `<strong>${data.name}</strong> kommenterte den ${data.time}: ${data.content}`;
     commentList.appendChild(newComment);
+
+    // Tøm feltene etter at kommentaren er lagt til
+    commentNameInput.value = "";
+    commentTextInput.value = "";
   } catch (error) {
     console.error("Error adding comment:", error);
   }
 }
+
+// ---------------------
+// Initialization
+// ---------------------
 
 fetchAndDisplayPosts();

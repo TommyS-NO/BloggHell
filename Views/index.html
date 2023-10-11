@@ -38,17 +38,20 @@
         <h2>Admin Mode</h2>
         <button onclick="adminLogout()">Logg ut</button>
         <!-- Skjema for å opprette nytt innlegg -->
-        <form id="createPostForm">
+        <form
+          id="createPostForm"
+          onsubmit="event.preventDefault(); submitNewPost();"
+        >
           <input type="text" id="postTitle" placeholder="Tittel" required />
           <textarea id="postContent" placeholder="Innhold" required></textarea>
-          <input
-            type="button"
-            value="Opprett innlegg"
-            onclick="submitNewPost()"
-          />
+          <input type="submit" value="Opprett innlegg" />
         </form>
         <!-- Skjema for å redigere et eksisterende innlegg -->
-        <form id="editPostForm" style="display: none">
+        <form
+          id="editPostForm"
+          style="display: none"
+          onsubmit="event.preventDefault(); updatePostFromForm();"
+        >
           <input type="hidden" id="editPostId" />
           <input type="text" id="editPostTitle" placeholder="Tittel" required />
           <textarea
@@ -56,11 +59,7 @@
             placeholder="Innhold"
             required
           ></textarea>
-          <input
-            type="button"
-            value="Oppdater innlegg"
-            onclick="updatePostFromForm()"
-          />
+          <input type="submit" value="Oppdater innlegg" />
           <button type="button" onclick="cancelEdit()">Avbryt</button>
         </form>
       </section>
@@ -71,7 +70,10 @@
     <script src="/js/admin.js"></script>
     <div id="loginPopup" class="login-popup" style="display: none">
       <span onclick="hideLoginPopup()" style="cursor: pointer">&times;</span>
-      <form id="adminLoginForm">
+      <form
+        id="adminLoginForm"
+        onsubmit="event.preventDefault(); handleAdminLogin();"
+      >
         <input type="text" id="adminUsername" placeholder="Username" required />
         <input
           type="password"
@@ -79,7 +81,7 @@
           placeholder="Password"
           required
         />
-        <input type="button" value="Login" onclick="handleAdminLogin()" />
+        <input type="submit" value="Login" />
       </form>
     </div>
   </body>
