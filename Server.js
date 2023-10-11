@@ -24,24 +24,18 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../BLOGG/public"))); // Updated path to public folder
 
 // Routes
-const mainRoutes = require("./server/routes/main");
-const adminRoutes = require("./server/routes/admin");
+const mainRoutes = require("./Server/Routes/main");
+const adminRoutes = require("./Server/Routes/admin");
 
 app.use("/", mainRoutes);
 app.use("/admin", adminRoutes);
 
-// Logout route
-app.get("/logout", (req, res) => {
-  req.session.destroy();
-  res.redirect("/");
-});
-
 // 404 handler
 app.use((req, res, next) => {
-  res.status(404).send("Page not found");
+  res.status(404).json({ error: "Page not found" });
 });
 
 // Global error handler

@@ -10,7 +10,7 @@ function hideLoginPopup() {
 
 async function fetchAndDisplayPosts() {
   try {
-    const response = await fetch("/api/posts");
+    const response = await fetch("/posts");
     const posts = await response.json();
     const postContainer = document.getElementById("postContainer");
     let html = "";
@@ -27,7 +27,8 @@ async function fetchAndDisplayPosts() {
               <div class="post">
                 <h2>${post.title}</h2>
                 <p>${post.content}</p>
-                <p>Dato: ${new Date(post.date).toLocaleDateString()}</p>
+                <p>Dato: ${new Date(post.dateCreated).toLocaleDateString()}</p>
+
                 <button onclick="likePost(${post.id})">Like</button> 
                 <span id="likes-${post.id}">${post.likes}</span> Likes
                 <hr />
@@ -54,7 +55,7 @@ async function fetchAndDisplayPosts() {
 
 async function likePost(postId) {
   try {
-    const response = await fetch(`/api/like/${postId}`, {
+    const response = await fetch(`/like/${postId}`, {
       method: "POST",
     });
     const data = await response.json();
@@ -93,7 +94,7 @@ async function addComment(postId) {
   }
 
   try {
-    const response = await fetch(`/api/comment/${postId}`, {
+    const response = await fetch(`/comment/${postId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

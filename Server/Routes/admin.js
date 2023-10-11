@@ -2,104 +2,119 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs").promises;
 const path = require("path");
-const adminUsername = process.env.ADMIN_USERNAME;
-const adminPassword = process.env.ADMIN_PASSWORD;
 
 const postsDataPath = path.join(__dirname, "../Data/blogginnlegg.json");
 
-async function ensureAuthenticated(req, res, next) {
-  if (req.session.isAuthenticated) {
-    return next();
+// Middleware for å sjekke om admin er logget inn
+function ensureAdmin(req, res, next) {
+  if (req.session.isAdmin) {
+    next();
   } else {
-    res.redirect("/");
+    res.status(403).send("Access denied");
   }
 }
 
-router.get("/", ensureAuthenticated, (req, res) => {
-  res.sendFile(path.join(__dirname, "../../views/admin.html"));
-});
-
-router.post("/", async (req, res) => {
+// POST - Admin Login
+router.post("/login", (req, res) => {
   const { username, password } = req.body;
-  const validChars = /^[a-zA-Z0-9æøåÆØÅ]+$/;
-  if (!username.match(validChars) || !password.match(validChars)) {
-    return res.send(
-      '<script>alert("Ugyldige tegn i brukernavn eller passord."); window.location.href = "/";</script>'
-    );
-  }
-  if (username === adminUsername && password === adminPassword) {
-    req.session.isAuthenticated = true;
-    res.redirect("/admin");
+
+  if (
+    username === process.env.ADMIN_USERNAME &&
+    password === process.env.ADMIN_PASSWORD
+  ) {
+    req.session.isAdmin = true;
+    res.status(200).send("Admin logged in successfully");
   } else {
-    res.send(
-      '<script>alert("Ugyldig innlogging."); window.location.href = "/";</script>'
-    );
+    res.status(401).send("Invalid credentials");
   }
 });
 
-router.get("/admin.html", ensureAuthenticated, async (req, res) => {
+// GET - Admin Logout
+router.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
+
+// GET - Hente alle innlegg for admin
+router.get("/get-all-posts", ensureAdmin, async (req, res) => {
   try {
-    const posts = JSON.parse(await fs.readFile(postsDataPath, "utf-8"));
-    res.render("admin/admin", { posts });
+    const data = await fs.readFile(postsDataPath, "utf-8");
+    const posts = JSON.parse(data);
+    res.status(200).json(posts);
   } catch (error) {
     res.status(500).send("Server error");
   }
 });
 
-router.get("/add-post", ensureAuthenticated, (req, res) => {
-  res.render("admin/add-post");
+// GET - Hente et spesifikt innlegg for redigering
+router.get("/get-post/:id", ensureAdmin, async (req, res) => {
+  try {
+    const postId = parseInt(req.params.id);
+    const data = await fs.readFile(postsDataPath, "utf-8");
+    const posts = JSON.parse(data);
+    const post = posts.find((p) => p.id === postId);
+    if (!post) return res.status(404).send("Post not found.");
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(500).send("Server error");
+  }
 });
 
-router.post("/api/new-post", ensureAuthenticated, async (req, res) => {
-  console.log("Inside /api/new-post route");
+// POST - Opprett nytt blogginnlegg
+router.post("/create-post", ensureAdmin, async (req, res) => {
   try {
     const { title, content } = req.body;
     const newPost = {
       id: Date.now(),
-      title: title,
-      content: content,
+      title,
+      content,
       dateCreated: new Date().toISOString(),
       views: 0,
       likes: 0,
+      comments: [],
     };
-    const posts = JSON.parse(await fs.readFile(postsDataPath, "utf-8"));
+
+    const data = await fs.readFile(postsDataPath, "utf-8");
+    const posts = JSON.parse(data);
     posts.unshift(newPost);
-    await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 4));
-    res.json(newPost);
-  } catch (error) {
-    console.error("Error in /api/new-post:", error);
-    res.status(500).json({ error: "Server error" }); // Send JSON-respons ved feil
-  }
-});
-router.put("/api/edit-post/:id", ensureAuthenticated, async (req, res) => {
-  try {
-    const postId = parseInt(req.params.id);
-    const { title, content } = req.body;
-    const posts = JSON.parse(await fs.readFile(postsDataPath, "utf-8"));
-    const post = posts.find((p) => p.id === postId);
-    if (!post) {
-      return res.status(404).send("Innlegget ble ikke funnet.");
-    }
-    post.title = title;
-    post.content = content;
-    await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 4));
-    res.json(post);
+    await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
+    res.status(201).send("Blog post created successfully");
   } catch (error) {
     res.status(500).send("Server error");
   }
 });
 
-router.delete("/api/delete-post/:id", ensureAuthenticated, async (req, res) => {
+// PUT - Oppdater et blogginnlegg
+router.put("/update-post/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
-    const posts = JSON.parse(await fs.readFile(postsDataPath, "utf-8"));
-    const postIndex = posts.findIndex((post) => post.id === postId);
-    if (postIndex === -1) {
-      return res.status(404).send("Innlegget ble ikke funnet.");
-    }
+    const { title, content } = req.body;
+
+    const data = await fs.readFile(postsDataPath, "utf-8");
+    const posts = JSON.parse(data);
+    const post = posts.find((p) => p.id === postId);
+    if (!post) return res.status(404).send("Post not found.");
+
+    post.title = title;
+    post.content = content;
+    await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
+    res.status(200).send("Blog post updated successfully");
+  } catch (error) {
+    res.status(500).send("Server error");
+  }
+});
+
+// DELETE - Slett et blogginnlegg/kommentar
+router.delete("/delete-post/:id", ensureAdmin, async (req, res) => {
+  try {
+    const postId = parseInt(req.params.id);
+    const data = await fs.readFile(postsDataPath, "utf-8");
+    const posts = JSON.parse(data);
+    const postIndex = posts.findIndex((p) => p.id === postId);
+    if (postIndex === -1) return res.status(404).send("Post not found.");
     posts.splice(postIndex, 1);
-    await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 4));
-    res.json({ success: true });
+    await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
+    res.status(200).send("Blog post deleted successfully");
   } catch (error) {
     res.status(500).send("Server error");
   }

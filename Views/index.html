@@ -34,22 +34,48 @@
       <section id="postContainer" class="blog-content">
         <!-- Posts will be added here using JavaScript -->
       </section>
+      <section id="adminSection" class="admin-feature" style="display: none">
+        <h2>Admin Mode</h2>
+        <button onclick="adminLogout()">Logg ut</button>
+        <!-- Skjema for å opprette nytt innlegg -->
+        <form id="createPostForm">
+          <input type="text" id="postTitle" placeholder="Tittel" required />
+          <textarea id="postContent" placeholder="Innhold" required></textarea>
+          <input type="button" value="Opprett innlegg" onclick="createPost()" />
+        </form>
+        <!-- Skjema for å redigere et eksisterende innlegg -->
+        <form id="editPostForm" style="display: none">
+          <input type="hidden" id="editPostId" />
+          <input type="text" id="editPostTitle" placeholder="Tittel" required />
+          <textarea
+            id="editPostContent"
+            placeholder="Innhold"
+            required
+          ></textarea>
+          <input
+            type="button"
+            value="Oppdater innlegg"
+            onclick="updatePostFromForm()"
+          />
+          <button type="button" onclick="cancelEdit()">Avbryt</button>
+        </form>
+      </section>
     </main>
     <footer>BloggHell © 2023. Alle rettigheter forbeholdt.</footer>
 
     <script src="/js/main.js"></script>
-
+    <script src="/js/admin.js"></script>
     <div id="loginPopup" class="login-popup" style="display: none">
       <span onclick="hideLoginPopup()" style="cursor: pointer">&times;</span>
-      <form action="/admin" method="post">
-        <input type="text" name="username" placeholder="Username" required />
+      <form id="adminLoginForm">
+        <input type="text" id="adminUsername" placeholder="Username" required />
         <input
           type="password"
-          name="password"
+          id="adminPassword"
           placeholder="Password"
           required
         />
-        <input type="submit" value="Login" />
+        <input type="button" value="Login" onclick="handleAdminLogin()" />
       </form>
     </div>
   </body>

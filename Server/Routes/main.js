@@ -3,10 +3,10 @@ const router = express.Router();
 const fs = require("fs").promises;
 const path = require("path");
 
-const postsDataPath = path.join(__dirname, "../data/blogginnlegg.json");
+const postsDataPath = path.join(__dirname, "../Data/blogginnlegg.json");
 
 // GET - Hente alle blogginnlegg
-router.get("/api/posts", async (req, res) => {
+router.get("/posts", async (req, res) => {
   try {
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
@@ -25,7 +25,7 @@ router.get("/api/posts", async (req, res) => {
   }
 });
 
-router.post("/api/like/:id", async (req, res) => {
+router.post("/like/:id", async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
     const data = await fs.readFile(postsDataPath, "utf-8");
@@ -41,7 +41,7 @@ router.post("/api/like/:id", async (req, res) => {
 });
 
 // POST - Legge til en kommentar
-router.post("/api/comment/:id", async (req, res) => {
+router.post("/comment/:id", async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
     const { name, time, content } = req.body;
@@ -65,7 +65,6 @@ router.post("/api/comment/:id", async (req, res) => {
 
 // GET - Hovedsiden
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../views/index.html"));
+  res.sendFile(path.join(__dirname, "../../Views/index.html"));
 });
-
 module.exports = router;
