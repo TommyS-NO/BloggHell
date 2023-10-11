@@ -1,27 +1,12 @@
 [
   {
-    "id": 1697018140993,
-    "title": "TEst fra Admin Mode2",
-    "content": "22",
-    "dateCreated": "2023-10-11T09:55:40.993Z",
-    "views": 0,
-    "likes": 0,
-    "comments": []
-  },
-  {
     "id": 1697016671715,
     "title": "TEst fra Admin Mode",
     "content": "TEst fra ADMINeaweaw",
     "dateCreated": "2023-10-11T09:31:11.715Z",
     "views": 0,
     "likes": 6,
-    "comments": [
-      {
-        "name": "ffsdf",
-        "time": "11.10.2023, 11:38:06",
-        "content": "ffsdf"
-      }
-    ]
+    "comments": []
   },
   {
     "id": 1696710450662,
@@ -36,7 +21,7 @@
     "id": 1696710550662,
     "title": "Test3 bloggen",
     "content": "Loreolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
-    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "dateCreated": "2023-10-06T20:27:30.852Z",
     "views": 0,
     "likes": [],
     "comments": []
@@ -45,7 +30,7 @@
     "id": 1696710451662,
     "title": "Test4 bloggen",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
-    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "dateCreated": "2023-10-05T20:27:30.852Z",
     "views": 0,
     "likes": [],
     "comments": []

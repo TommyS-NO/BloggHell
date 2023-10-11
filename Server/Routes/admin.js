@@ -5,6 +5,10 @@ const path = require("path");
 
 const postsDataPath = path.join(__dirname, "../Data/blogginnlegg.json");
 
+// ---------------------
+// Middleware Functions
+// ---------------------
+
 function ensureAdmin(req, res, next) {
   console.log("Checking admin status:", req.session);
   if (req.session.isAdmin) {
@@ -15,6 +19,9 @@ function ensureAdmin(req, res, next) {
     res.status(403).json({ error: "Access denied" });
   }
 }
+// ---------------------
+// Admin Authentication Routes
+// ---------------------
 
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
@@ -37,6 +44,9 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
+// ---------------------
+// Post CRUD Routes
+// ---------------------
 
 router.get("/get-all-posts", async (req, res) => {
   try {
@@ -61,7 +71,6 @@ router.get("/get-post/:id", async (req, res) => {
   }
 });
 
-// POST - Opprett
 router.post("/create-post", ensureAdmin, async (req, res) => {
   console.log("Received data:", req.body);
   try {
@@ -86,7 +95,6 @@ router.post("/create-post", ensureAdmin, async (req, res) => {
   }
 });
 
-// PUT - Oppdater
 router.put("/update-post/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
@@ -106,7 +114,6 @@ router.put("/update-post/:id", ensureAdmin, async (req, res) => {
   }
 });
 
-// Slett
 router.delete("/delete-post/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
@@ -121,6 +128,10 @@ router.delete("/delete-post/:id", ensureAdmin, async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
+// ---------------------
+// Comment CRUD Routes
+// ---------------------
 
 router.post("/delete-comment/:id", async (req, res) => {
   try {

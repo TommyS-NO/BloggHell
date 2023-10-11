@@ -93,7 +93,7 @@ async function addComment(postId) {
 
   // Sjekk om feltene er tomme
   if (!commentName.trim() || !commentText.trim()) {
-    alert("Både navn og kommentar må fylles ut.");
+    alert("Navn og Kommentar må fylles ut.");
     return;
   }
 
@@ -105,9 +105,7 @@ async function addComment(postId) {
 
   // Validering av kommentartekst
   if (!commentText.match(validCommentChars)) {
-    alert(
-      "Ugyldige tegn i kommentaren. Bare bokstaver, tall, punktum, komma og mellomrom er tillatt."
-    );
+    alert("Ugyldige tegn i kommentaren.");
     return;
   }
 
@@ -136,9 +134,5 @@ async function addComment(postId) {
     console.error("Error adding comment:", error);
   }
 }
-
-// ---------------------
-// Initialization
-// ---------------------
 
 fetchAndDisplayPosts();

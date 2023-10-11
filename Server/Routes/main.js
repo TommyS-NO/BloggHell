@@ -5,7 +5,11 @@ const path = require("path");
 
 const postsDataPath = path.join(__dirname, "../Data/blogginnlegg.json");
 
-// GET - Hente alle blogginnlegg
+// ---------------------
+// Blog Posts Routes
+// ---------------------
+
+//GET all Posts
 router.get("/posts", async (req, res) => {
   try {
     const data = await fs.readFile(postsDataPath, "utf-8");
@@ -24,7 +28,7 @@ router.get("/posts", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
-
+//Like
 router.post("/like/:id", async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
@@ -39,8 +43,7 @@ router.post("/like/:id", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
-
-// POST - Legge til en kommentar
+//Comment
 router.post("/comment/:id", async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
@@ -63,7 +66,10 @@ router.post("/comment/:id", async (req, res) => {
   }
 });
 
-// GET - Hovedsiden
+// ---------------------
+// Main Page Route
+// ---------------------
+
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../../Views/index.html"));
 });
