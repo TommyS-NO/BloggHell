@@ -1,14 +1,27 @@
+// ---------------------
+// Module Imports
+// ---------------------
 require("dotenv").config();
-
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const session = require("express-session");
 
+// ---------------------
+// App Initialization
+// ---------------------
 const app = express();
 const PORT = 3234;
 
-// Set up session middleware
+// ---------------------
+// Middleware Setup
+// ---------------------
+// JSON and Form Data Parsing
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Cookie and Session Handling
+app.use(cookieParser());
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -20,19 +33,20 @@ app.use(
   })
 );
 
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "../BLOGG/public"))); // Updated path to public folder
+// Static Files Serving
+app.use(express.static(path.join(__dirname, "../BLOGG/public")));
 
-// Routes
+// ---------------------
+// Routes Setup
+// ---------------------
 const mainRoutes = require("./Server/Routes/main");
 const adminRoutes = require("./Server/Routes/admin");
-
 app.use("/", mainRoutes);
 app.use("/admin", adminRoutes);
 
+// ---------------------
+// Error Handlers
+// ---------------------
 // 404 handler
 app.use((req, res, next) => {
   res.status(404).json({ error: "Page not found" });
@@ -44,7 +58,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Server error", details: err.message });
 });
 
-// Start server
+// ---------------------
+// Start Server
+// ---------------------
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

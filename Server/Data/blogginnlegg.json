@@ -1,118 +1,38 @@
 [
   {
-    "id": 1697002133360,
-    "dateCreated": "2023-10-11T05:28:53.360Z",
+    "id": 1697016671715,
+    "title": "TEst fra Admin Mode",
+    "content": "TEst fra ADMIN",
+    "dateCreated": "2023-10-11T09:31:11.715Z",
     "views": 0,
-    "likes": 2,
+    "likes": 5,
     "comments": []
   },
   {
-    "id": 16967104508522,
-    "title": "Test3 bloggen",
-    "content": "DEnne er no Redigert",
-    "dateCreated": "2023-10-07T20:27:30.852Z",
-    "views": 0,
-    "likes": 24,
-    "comments": [
-      {
-        "name": "dadasd",
-        "time": "7.10.2023, 22:48:51",
-        "content": "dasdsad"
-      },
-      {
-        "name": "dasdasd",
-        "time": "7.10.2023, 22:54:06",
-        "content": "dasdas"
-      },
-      {
-        "name": "Stian",
-        "time": "7.10.2023, 23:03:06",
-        "content": "Hater Blogg"
-      },
-      {
-        "name": "dasdas",
-        "time": "8.10.2023, 09:47:23",
-        "content": "dasdas"
-      },
-      {
-        "name": "ffsdfsdf",
-        "time": "10.10.2023, 10:58:57",
-        "content": "fdsfsdf"
-      },
-      {
-        "name": "igbibib",
-        "time": "10.10.2023, 13:35:47",
-        "content": "bbob"
-      },
-      {
-        "name": "dasd",
-        "time": "11.10.2023, 07:27:52",
-        "content": "gfhgfh"
-      }
-    ]
-  },
-  {
-    "id": 169677900450852,
-    "title": "Test3 bloggen",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
-    "dateCreated": "2023-10-07T20:27:30.852Z",
-    "views": 0,
-    "likes": 10,
-    "comments": [
-      {
-        "name": "czxcz",
-        "time": "10.10.2023, 13:45:35",
-        "content": "czxc"
-      },
-      {
-        "name": "fdsfsdf",
-        "time": "10.10.2023, 22:09:29",
-        "content": "fsdfsdf"
-      }
-    ]
-  },
-  {
-    "id": 1691710450852,
-    "title": "Test3 bloggen",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
-    "dateCreated": "2023-10-07T20:27:30.852Z",
-    "views": 0,
-    "likes": 10,
-    "comments": [
-      {
-        "name": "dasda",
-        "time": "7.10.2023, 22:54:11",
-        "content": "dasdas"
-      },
-      {
-        "name": "fsdfdsf",
-        "time": "10.10.2023, 13:40:35",
-        "content": "fsdf"
-      }
-    ]
-  },
-  {
-    "id": 1996710450852,
-    "title": "Test3 bloggen",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
-    "dateCreated": "2023-10-07T20:27:30.852Z",
-    "views": 0,
-    "likes": 9,
-    "comments": [
-      {
-        "name": "dasdsa",
-        "time": "7.10.2023, 22:47:28",
-        "content": "dasdas"
-      }
-    ]
-  },
-  {
     "id": 1696710450662,
+    "title": "Test2 bloggen",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
+    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "views": 0,
+    "likes": [],
+    "comments": []
+  },
+  {
+    "id": 1696710550662,
     "title": "Test3 bloggen",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
     "dateCreated": "2023-10-07T20:27:30.852Z",
     "views": 0,
-    "likes": 7,
+    "likes": [],
+    "comments": []
+  },
+  {
+    "id": 1696710451662,
+    "title": "Test4 bloggen",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
+    "dateCreated": "2023-10-07T20:27:30.852Z",
+    "views": 0,
+    "likes": [],
     "comments": []
   }
 ]

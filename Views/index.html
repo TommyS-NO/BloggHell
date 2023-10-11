@@ -41,7 +41,11 @@
         <form id="createPostForm">
           <input type="text" id="postTitle" placeholder="Tittel" required />
           <textarea id="postContent" placeholder="Innhold" required></textarea>
-          <input type="button" value="Opprett innlegg" onclick="createPost()" />
+          <input
+            type="button"
+            value="Opprett innlegg"
+            onclick="submitNewPost()"
+          />
         </form>
         <!-- Skjema for å redigere et eksisterende innlegg -->
         <form id="editPostForm" style="display: none">

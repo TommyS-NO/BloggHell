@@ -1,3 +1,7 @@
+// ---------------------
+// Admin Authentication Functions
+// ---------------------
+
 function handleAdminLogin() {
   const username = document.getElementById("adminUsername").value;
   const password = document.getElementById("adminPassword").value;
@@ -30,15 +34,41 @@ async function adminLogout() {
     const response = await fetch("/admin/logout");
     if (response.ok) {
       hideAdminFeatures();
+      location.reload();
     }
   } catch (error) {
     console.error("Error logging out:", error);
   }
 }
 
-function createNewPost() {
-  const title = document.getElementById("postTitle").value;
-  const content = document.getElementById("postContent").value;
+// ---------------------
+// Admin UI Functions
+// ---------------------
+
+function showAdminFeatures() {
+  const adminSection = document.getElementById("adminSection");
+  const loginPopup = document.getElementById("loginPopup");
+
+  adminSection.style.display = "block";
+  loginPopup.style.display = "none";
+}
+
+function hideAdminFeatures() {
+  const adminSection = document.getElementById("adminSection");
+  adminSection.style.display = "none";
+}
+
+// ---------------------
+// Post CRUD Functions
+// ---------------------
+
+function submitNewPost() {
+  const title = document.getElementById("postTitle").value.trim();
+  const content = document.getElementById("postContent").value.trim();
+  if (!title || !content) {
+    alert("Vennligst fyll ut både tittel og innhold.");
+    return;
+  }
   createPost(title, content);
   document.getElementById("postTitle").value = "";
   document.getElementById("postContent").value = "";
@@ -103,19 +133,6 @@ async function deletePost(id) {
   }
 }
 
-function showAdminFeatures() {
-  const adminSection = document.getElementById("adminSection");
-  const loginPopup = document.getElementById("loginPopup");
-
-  adminSection.style.display = "block";
-  loginPopup.style.display = "none";
-}
-
-function hideAdminFeatures() {
-  const adminSection = document.getElementById("adminSection");
-  adminSection.style.display = "none";
-}
-
 async function loadAdminPosts() {
   try {
     const response = await fetch("/admin/get-all-posts");
@@ -130,6 +147,16 @@ async function loadAdminPosts() {
       postElement.innerHTML = `
         <h3>${post.title}</h3>
         <p>${post.content}</p>
+        <p>Likes: ${post.likes}</p>
+        <p>Kommentarer:</p>
+        <ul>
+          ${post.comments
+            .map(
+              (comment) =>
+                `<li>${comment.name}: ${comment.content} <button onclick="deleteComment(${post.id}, '${comment.time}')">Slett</button></li>`
+            )
+            .join("")}
+        </ul>
         <button onclick="showEditPostForm(${post.id})">Rediger</button>
         <button onclick="deletePost(${post.id})">Slett</button>
       `;
@@ -169,4 +196,24 @@ function submitEditPost(postId) {
 
 function cancelEditPost(postId) {
   loadAdminPosts();
+}
+async function deleteComment(postId, commentTime) {
+  try {
+    const response = await fetch(`/admin/delete-comment/${postId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ time: commentTime }),
+    });
+
+    if (response.ok) {
+      alert("Kommentar slettet.");
+      loadAdminPosts();
+    } else {
+      alert("Feil ved sletting av kommentar.");
+    }
+  } catch (error) {
+    console.error("Error deleting comment:", error);
+  }
 }
