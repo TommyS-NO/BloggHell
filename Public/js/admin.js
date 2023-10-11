@@ -117,6 +117,8 @@ async function updatePost(id, title, content) {
 }
 
 async function deletePost(id) {
+  const confirmation = confirm("Er du sikker på at du vil slette?");
+  if (!confirmation) return;
   try {
     const response = await fetch(`/admin/delete-post/${id}`, {
       method: "DELETE",
@@ -147,13 +149,20 @@ async function loadAdminPosts() {
       postElement.innerHTML = `
         <h3>${post.title}</h3>
         <p>${post.content}</p>
+        <p>Opprettet: ${new Date(post.dateCreated).toLocaleString()}</p>
         <p>Likes: ${post.likes}</p>
         <p>Kommentarer:</p>
         <ul>
           ${post.comments
             .map(
               (comment) =>
-                `<li>${comment.name}: ${comment.content} <button onclick="deleteComment(${post.id}, '${comment.time}')">Slett</button></li>`
+                `<li>${comment.name} (${new Date(
+                  comment.time
+                ).toLocaleString()}): ${
+                  comment.content
+                } <button onclick="deleteComment(${post.id}, '${
+                  comment.time
+                }')">Slett</button></li>`
             )
             .join("")}
         </ul>
@@ -189,6 +198,10 @@ async function showEditPostForm(postId) {
 }
 
 function submitEditPost(postId) {
+  const confirmation = confirm(
+    "Er du sikker på at du vil redigere dette innlegget?"
+  );
+  if (!confirmation) return;
   const title = document.getElementById(`editPostTitle-${postId}`).value;
   const content = document.getElementById(`editPostContent-${postId}`).value;
   updatePost(postId, title, content);
@@ -198,14 +211,15 @@ function cancelEditPost(postId) {
   loadAdminPosts();
 }
 async function deleteComment(postId, commentTime) {
+  const confirmation = confirm("Er du sikker på at du vil slette?");
+  if (!confirmation) return;
   try {
-    const response = await fetch(`/admin/delete-comment/${postId}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ time: commentTime }),
-    });
+    const response = await fetch(
+      `/admin/delete-comment/${postId}?time=${commentTime}`,
+      {
+        method: "DELETE",
+      }
+    );
 
     if (response.ok) {
       alert("Kommentar slettet.");

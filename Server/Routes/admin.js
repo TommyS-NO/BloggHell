@@ -133,10 +133,11 @@ router.delete("/delete-post/:id", ensureAdmin, async (req, res) => {
 // Comment CRUD Routes
 // ---------------------
 
-router.post("/delete-comment/:id", async (req, res) => {
+router.delete("/delete-comment/:id", async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
-    const commentTime = req.body.time;
+    const commentTime = req.query.time;
+
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
