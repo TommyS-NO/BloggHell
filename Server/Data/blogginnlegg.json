@@ -1,35 +1,42 @@
 [
   {
     "id": 1697058555609,
-    "title": "TEst fra Admin Mode3",
-    "content": "2222111223",
+    "title": "TEst fra Admin Mdasdsdode3",
+    "content": "2222111223\nRedigert v3",
     "dateCreated": "2023-10-11T21:09:15.609Z",
+    "lastEdited": "2023-10-12T12:03:38.049Z",
     "views": 0,
-    "likes": 0,
-    "comments": []
-  },
-  {
-    "id": 1697058179028,
-    "title": "TEst fra Admin ModeREDIGERT",
-    "content": "Ny Test IGJEN\nOG REDIGERT IGNEN PÅ INNLEGG\n\nFUNGERER KLOKKA...\n\nfdsfds",
-    "dateCreated": "2023-10-11T21:02:59.028Z",
-    "views": 0,
-    "likes": 5,
+    "likes": 4,
     "comments": [
       {
-        "name": "fsdfdsf",
-        "time": "11.10.2023, 23:04:21",
-        "content": "fsdfsd"
+        "name": "dasdasdas",
+        "time": "12.10.2023, 13:58:19",
+        "content": "43423423"
+      },
+      {
+        "name": "dasdas",
+        "time": "13.10.2023, 11:51:20",
+        "content": "dasds"
       }
     ]
   },
   {
+    "id": 1697058179028,
+    "title": "TEst fra Admin ModeREDIGERT",
+    "content": "REdigert for å se om tiden fungerer ",
+    "dateCreated": "2023-10-11T21:02:59.028Z",
+    "views": 0,
+    "likes": 6,
+    "comments": []
+  },
+  {
     "id": 1696710450662,
     "title": "Test2 bloggen",
-    "content": "Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.\n\nREDIGERT",
+    "content": "Lorem ipdsum dolor sit amet, dsadadasdsdasdas\n\nREDIGERT 13:22\nconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.\n\nREDIGERT",
     "dateCreated": "2023-10-07T20:27:30.852Z",
+    "lastEdited": "2023-10-12T12:03:52.102Z",
     "views": 0,
-    "likes": 2,
+    "likes": 4,
     "comments": []
   },
   {
@@ -37,8 +44,9 @@
     "title": "Test3 bloggen",
     "content": "Loreolor sit amet, consecteuytutyutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
     "dateCreated": "2023-10-06T20:27:30.852Z",
+    "lastEdited": "2023-10-12T12:34:56.789Z",
     "views": 0,
-    "likes": 2,
+    "likes": 3,
     "comments": []
   }
 ]

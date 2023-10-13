@@ -1,0 +1,137 @@
+// Variabler
+$primary-bg-color: #e8e8e8;
+$primary-color: #333;
+$white-color: #ffffff;
+$admin-bg-color: #b14a4a;
+$admin-secondary-bg-color: #c4aeae;
+
+// Reset and Global Styles
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: $primary-bg-color;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Header Styles
+header {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+// Main Content Styles
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  margin-top: 60px;
+  padding: 20px;
+
+  .bio {
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+  }
+
+  .blog-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Footer Styles
+footer {
+  background-color: $primary-color;
+  color: $white-color;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+// Admin Styles (Kun hvis nødvendig)
+.admin-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+}
+// Login Popup Styles
+.login-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: $white-color;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  span {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+
+  input[type="button"] {
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+}

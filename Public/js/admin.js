@@ -150,6 +150,13 @@ async function loadAdminPosts() {
         <h3>${post.title}</h3>
         <p>${post.content}</p>
         <p>Opprettet: ${new Date(post.dateCreated).toLocaleString()}</p>
+        ${
+          post.lastEdited
+            ? `<p>Sist redigert: ${new Date(
+                post.lastEdited
+              ).toLocaleString()}</p>`
+            : ""
+        }
         <p>Likes: ${post.likes}</p>
         <p>Kommentarer:</p>
         <ul>

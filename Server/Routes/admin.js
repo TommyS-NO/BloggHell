@@ -80,6 +80,7 @@ router.post("/create-post", ensureAdmin, async (req, res) => {
       title,
       content,
       dateCreated: new Date().toISOString(),
+      lastEdited: null,
       views: 0,
       likes: 0,
       comments: [],
@@ -107,6 +108,7 @@ router.put("/update-post/:id", ensureAdmin, async (req, res) => {
 
     post.title = title;
     post.content = content;
+    post.lastEdited = new Date().toISOString();
     await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
     res.status(200).json({ message: "Blog post updated successfully" });
   } catch (error) {

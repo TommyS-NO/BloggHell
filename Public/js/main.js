@@ -43,11 +43,16 @@ async function fetchAndDisplayPosts() {
 }
 
 function generatePostHtml(post, commentsHtml) {
+  const lastEditedHtml = post.lastEdited
+    ? `<p>Sist redigert: ${new Date(post.lastEdited).toLocaleDateString()}</p>`
+    : "";
+
   return `
     <div class="post">
       <h2>${post.title}</h2>
       <p>${post.content}</p>
       <p>Dato: ${new Date(post.dateCreated).toLocaleDateString()}</p>
+      ${lastEditedHtml} <!-- Ny linje for å vise redigeringsdato -->
       <button onclick="likePost(${post.id})">Like</button> 
       <span id="likes-${post.id}">${post.likes}</span> Likes
       <hr />
