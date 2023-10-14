@@ -48,16 +48,19 @@ async function adminLogout() {
 function showAdminFeatures() {
   const adminSection = document.getElementById("adminSection");
   const loginPopup = document.getElementById("loginPopup");
+  const bioSection = document.getElementById("bio");
 
   adminSection.style.display = "block";
   loginPopup.style.display = "none";
+  bioSection.style.display = "none";
 }
 
 function hideAdminFeatures() {
   const adminSection = document.getElementById("adminSection");
+  const bioSection = document.getElementById("bio");
   adminSection.style.display = "none";
+  bioSection.style.display = "block";
 }
-
 // ---------------------
 // Post CRUD Functions
 // ---------------------

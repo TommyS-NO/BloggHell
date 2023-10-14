@@ -1,0 +1,28 @@
+header {
+  background-color: var(--header-bg-color);
+  color: var(--text-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px;
+}
+
+.bio {
+  border-right: 1px solid #ddd;
+}
+
+.blog-content {
+  background-color: #e0f0ff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  margin-bottom: 3px; /* Lagt til liten margin for skygge */
+}
+footer {
+  background-color: var(--footer-bg-color);
+  color: var(--text-color);
+}

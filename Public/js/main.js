@@ -24,14 +24,17 @@ async function fetchAndDisplayPosts() {
     let html = "";
 
     posts.forEach((post) => {
-      const commentsHtml = post.comments
-        ? post.comments
-            .map(
-              (comment) =>
-                `<li><strong>${comment.name}</strong> kommenterte den ${comment.time}: ${comment.content}</li>`
-            )
-            .join("")
-        : "";
+      const commentsHtml =
+        post.comments && Array.isArray(post.comments)
+          ? post.comments
+              .map((comment) => {
+                const formattedDate = comment.time
+                  .replace("T", " ")
+                  .split(".")[0];
+                return `<li><strong>${comment.name}</strong> kommenterte den ${formattedDate}:<br>${comment.content}</li>`;
+              })
+              .join("")
+          : "";
 
       html += generatePostHtml(post, commentsHtml);
     });
@@ -44,30 +47,40 @@ async function fetchAndDisplayPosts() {
 
 function generatePostHtml(post, commentsHtml) {
   const lastEditedHtml = post.lastEdited
-    ? `<p>Sist redigert: ${new Date(post.lastEdited).toLocaleDateString()}</p>`
+    ? `<p>Sist redigert: ${new Date(post.lastEdited).toLocaleDateString(
+        "no-NB"
+      )}</p>`
     : "";
 
   return `
     <div class="post">
-      <h2>${post.title}</h2>
-      <p>${post.content}</p>
-      <p>Dato: ${new Date(post.dateCreated).toLocaleDateString()}</p>
-      ${lastEditedHtml} <!-- Ny linje for å vise redigeringsdato -->
-      <button onclick="likePost(${post.id})">Like</button> 
-      <span id="likes-${post.id}">${post.likes}</span> Likes
-      <hr />
-      <div>
-        <h3>Kommentarer:</h3>
-        <ul id="comments-${post.id}">
-          ${commentsHtml}
-        </ul>
-        Navn: <input type="text" id="comment-name-${post.id}" />
-        <textarea id="comment-text-${post.id}"></textarea>
-        <button onclick="addComment(${post.id})">Legg til kommentar</button>
-      </div>
-      <hr />
+        <h2 class="blog-content">${post.title}</h2>
+        <p>${post.content}</p>
+        <p>Dato: ${new Date(post.dateCreated).toLocaleDateString("no-NB")}</p>
+        ${lastEditedHtml}
+        <button class="like" onclick="likePost(${post.id})">Like</button> 
+        <span id="likes-${post.id}">${post.likes}</span> Likes
+        <hr />
+        <div class="comments">
+            <h3>Kommentarer:</h3>
+            <ul id="comments-${post.id}">
+                ${commentsHtml}
+            </ul>
+            <div>
+                Navn: <input type="text" id="comment-name-${
+                  post.id
+                }" class="comment-input" />
+                Kommentar: <textarea id="comment-text-${
+                  post.id
+                }" class="comment-input"></textarea>
+                <button class="comment" onclick="addComment(${
+                  post.id
+                })">Legg til kommentar</button>
+            </div>
+        </div>
+        <hr />
     </div>
-  `;
+`;
 }
 
 // ---------------------
@@ -91,10 +104,10 @@ async function addComment(postId) {
   const commentTextInput = document.getElementById(`comment-text-${postId}`);
   const commentName = commentNameInput.value;
   const commentText = commentTextInput.value;
-  const commentTime = new Date().toLocaleString("no-NO", { hour12: false });
+  const commentTime = new Date().toISOString();
 
   const validNameChars = /^[a-zA-ZæøåÆØÅ\s]+$/;
-  const validCommentChars = /^[a-zA-Z0-9æøåÆØÅ\s.,]+$/;
+  const validCommentChars = /^[a-zA-Z0-9æøåÆØÅ\s.,!]+$/;
 
   // Sjekk om feltene er tomme
   if (!commentName.trim() || !commentText.trim()) {

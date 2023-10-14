@@ -1,24 +1,39 @@
 [
   {
-    "id": 1697058555609,
-    "title": "TEst fra Admin Mdasdsdode3",
-    "content": "2222111223\nRedigert v3",
-    "dateCreated": "2023-10-11T21:09:15.609Z",
-    "lastEdited": "2023-10-12T12:03:38.049Z",
+    "id": 1697312934442,
+    "title": "dasdsa",
+    "content": "dasdsad",
+    "dateCreated": "2023-10-14T19:48:54.442Z",
+    "lastEdited": null,
     "views": 0,
-    "likes": 4,
+    "likes": 0,
+    "comments": []
+  },
+  {
+    "id": 1697307202283,
+    "title": "gfgfgf",
+    "content": "gdfgfdgfdg",
+    "dateCreated": "2023-10-14T18:13:22.283Z",
+    "lastEdited": null,
+    "views": 0,
+    "likes": 12,
     "comments": [
       {
-        "name": "dasdasdas",
-        "time": "12.10.2023, 13:58:19",
-        "content": "43423423"
-      },
-      {
-        "name": "dasdas",
-        "time": "13.10.2023, 11:51:20",
-        "content": "dasds"
+        "name": "ghfhfgh",
+        "time": "2023-10-14T19:47:40.382Z",
+        "content": "hfghfghfgh"
       }
     ]
+  },
+  {
+    "id": 1697058555609,
+    "title": "TEst fra Admin Mdasdsdode3",
+    "content": "2222111223\nRedigert v3 v5",
+    "dateCreated": "2023-10-11T21:09:15.609Z",
+    "lastEdited": "2023-10-14T07:39:33.818Z",
+    "views": 0,
+    "likes": 11,
+    "comments": []
   },
   {
     "id": 1697058179028,
@@ -26,7 +41,7 @@
     "content": "REdigert for å se om tiden fungerer ",
     "dateCreated": "2023-10-11T21:02:59.028Z",
     "views": 0,
-    "likes": 6,
+    "likes": 9,
     "comments": []
   },
   {
@@ -36,17 +51,17 @@
     "dateCreated": "2023-10-07T20:27:30.852Z",
     "lastEdited": "2023-10-12T12:03:52.102Z",
     "views": 0,
-    "likes": 4,
+    "likes": 7,
     "comments": []
   },
   {
     "id": 1696710550662,
     "title": "Test3 bloggen",
-    "content": "Loreolor sit amet, consecteuytutyutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.",
+    "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.pjkp",
     "dateCreated": "2023-10-06T20:27:30.852Z",
-    "lastEdited": "2023-10-12T12:34:56.789Z",
+    "lastEdited": "2023-10-14T07:39:11.590Z",
     "views": 0,
-    "likes": 3,
+    "likes": 5,
     "comments": []
   }
 ]

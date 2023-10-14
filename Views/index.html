@@ -6,40 +6,37 @@
     <title>BloggHell - Hjem</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@200&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <!-- <link rel="stylesheet" href="/css/admin.css" /> -->
+    <link rel="stylesheet" href="/css/Global_Styles.css" />
   </head>
   <body>
     <header>
-      <h1>Velkommen til BloggHell</h1>
+      <h1>Velkommen til <span class="highlighted-title">BloggHell</span></h1>
     </header>
+
+    <aside class="bio">
+      <img
+        src="/images/Profile_img.png"
+        alt="Profilbilde"
+        class="profile-image"
+        onclick="showLoginPopup()"
+      />
+      <h2>Om Meg</h2>
+      <p>Navn: Bob</p>
+      <p>Alder: 38</p>
+      <p>Yrke: Webutvikler</p>
+      <p>Hobby: Ludo</p>
+      <p>Annet: Elsker kaffe</p>
+    </aside>
+
     <main>
-      <aside class="bio">
-        <img
-          src="/images/Profile_img.png"
-          alt="Profilbilde"
-          class="profile-image"
-          onclick="showLoginPopup()"
-        />
-        <h2>Om Meg</h2>
-        <p>Navn: Stian</p>
-        <p>Alder: 30</p>
-        <p>Yrke: Webutvikler</p>
-        <p>Hobby: Programmering</p>
-        <p>Annent: Elsker kaffe</p>
-      </aside>
-      <section id="postContainer" class="blog-content">
-        <!-- Posts will be added here using JavaScript -->
-      </section>
+      <section id="postContainer" class="blog-content"></section>
       <section id="adminSection" class="admin-feature" style="display: none">
         <h2>Admin Mode</h2>
         <button onclick="adminLogout()">Logg ut</button>
-        <!-- Skjema for å opprette nytt innlegg -->
         <form
           id="createPostForm"
           onsubmit="event.preventDefault(); submitNewPost();"
@@ -48,7 +45,6 @@
           <textarea id="postContent" placeholder="Innhold" required></textarea>
           <input type="submit" value="Opprett innlegg" />
         </form>
-        <!-- Skjema for å redigere et eksisterende innlegg -->
         <form
           id="editPostForm"
           style="display: none"
@@ -66,10 +62,18 @@
         </form>
       </section>
     </main>
+
     <footer>BloggHell © 2023. Alle rettigheter forbeholdt.</footer>
 
     <script src="/js/main.js"></script>
     <script src="/js/admin.js"></script>
+
+    <div
+      class="login-popup-overlay"
+      onclick="hideLoginPopup()"
+      style="display: none"
+    ></div>
+
     <div id="loginPopup" class="login-popup" style="display: none">
       <span onclick="hideLoginPopup()" style="cursor: pointer">&times;</span>
       <form

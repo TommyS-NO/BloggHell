@@ -1,0 +1,202 @@
+:root {
+  --primary-bg-color: #162c91;
+  --secondary-bg-color: #f4f4f4;
+  --header-bg-color: #162c91;
+  --footer-bg-color: #162c91;
+  --text-color: #ffffff;
+  --link-color: inherit;
+  --link-hover-color: underline;
+  --comments-bg-color: #e0e0e0;
+  --button-like-color: #18b83b;
+  --button-comment-color: #c0c0c0;
+  --button-login-color: green;
+  --title-color: white;
+}
+
+body {
+  font-family: "Young Serif", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: var(--primary-bg-color);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 0;
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover {
+  text-decoration: var(--link-hover-color);
+}
+
+header {
+  grid-column: 1 / span 2;
+  background-color: var(--header-bg-color);
+  padding: 20px 20px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.highlighted-title {
+  color: red;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  color: var(--title-color);
+}
+
+.bio {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: var(--secondary-bg-color);
+  padding: 10px 30px;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bio .profile-image + h2 {
+  margin-top: 20px;
+}
+
+main {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #ffffff;
+  padding: 20px;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+}
+
+.blog-content h2 {
+  text-align: center;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.comment-author {
+  display: block;
+}
+
+.comment-text {
+  display: block;
+  margin-left: 20px;
+}
+
+.comment-input {
+  width: 80%;
+  margin: 10px auto;
+  display: block;
+}
+textarea.comment-input {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.comments h3 {
+  font-size: 18px;
+  color: #777;
+}
+
+.profile-image {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+footer {
+  grid-column: 1 / span 2;
+  background-color: var(--footer-bg-color);
+  padding: 20px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+button,
+input[type="submit"] {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+button.like {
+  background-color: var(--button-like-color);
+  color: white;
+}
+
+button.comment {
+  background-color: var(--button-comment-color);
+}
+
+.login-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 300px;
+}
+
+.login-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.login-popup span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+}
+
+.login-popup input[type="submit"] {
+  background-color: var(--button-login-color);
+  color: white;
+  border-radius: 5px;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.login-popup input[type="text"],
+.login-popup input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+}
