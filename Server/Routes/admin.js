@@ -10,15 +10,13 @@ const postsDataPath = path.join(__dirname, "../Data/blogginnlegg.json");
 // ---------------------
 
 function ensureAdmin(req, res, next) {
-  console.log("Checking admin status:", req.session);
   if (req.session.isAdmin) {
-    console.log("Admin access granted.");
     next();
   } else {
-    console.log("Admin access denied.");
     res.status(403).json({ error: "Access denied" });
   }
 }
+
 // ---------------------
 // Admin Authentication Routes
 // ---------------------
@@ -31,16 +29,13 @@ router.post("/login", (req, res) => {
     password === process.env.ADMIN_PASSWORD
   ) {
     req.session.isAdmin = true;
-    console.log("Admin logged in successfully.");
-    res.status(200).json({ message: "Admin logged in successfully" });
+    res.status(200).json({ message: "Admin Logget Inn😊" });
   } else {
-    console.log("Invalid admin credentials.");
-    res.status(401).json({ error: "Invalid credentials" });
+    res.status(401).json({ error: "Feil Brukernavn eller Passord" });
   }
 });
 
 router.get("/logout", (req, res) => {
-  console.log("Admin logging out.");
   req.session.destroy();
   res.redirect("/");
 });
@@ -64,7 +59,7 @@ router.get("/get-post/:id", async (req, res) => {
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
-    if (!post) return res.status(404).json({ error: "Post not found" });
+    if (!post) return res.status(404).json({ error: "Innlegg ikke funnet" });
     res.status(200).json(post);
   } catch (error) {
     res.status(500).json({ error: "Server error" });
@@ -72,7 +67,6 @@ router.get("/get-post/:id", async (req, res) => {
 });
 
 router.post("/create-post", ensureAdmin, async (req, res) => {
-  console.log("Received data:", req.body);
   try {
     const { title, content } = req.body;
     const newPost = {
@@ -90,7 +84,7 @@ router.post("/create-post", ensureAdmin, async (req, res) => {
     const posts = JSON.parse(data);
     posts.unshift(newPost);
     await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
-    res.status(201).send("Blog post created successfully");
+    res.status(201).send("Nytt Blogginnlegg Opprettet 😃💵");
   } catch (error) {
     res.status(500).json({ error: "Server error: " + error.message });
   }
@@ -104,13 +98,13 @@ router.put("/update-post/:id", ensureAdmin, async (req, res) => {
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
-    if (!post) return res.status(404).send("Post not found.");
+    if (!post) return res.status(404).send("Ikke Funnet 😒");
 
     post.title = title;
     post.content = content;
     post.lastEdited = new Date().toISOString();
     await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
-    res.status(200).json({ message: "Blog post updated successfully" });
+    res.status(200).json({ message: "Blogg Oppdatert 😊" });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
@@ -122,10 +116,10 @@ router.delete("/delete-post/:id", ensureAdmin, async (req, res) => {
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
     const postIndex = posts.findIndex((p) => p.id === postId);
-    if (postIndex === -1) return res.status(404).send("Post not found.");
+    if (postIndex === -1) return res.status(404).send("Ikke funnet😒");
     posts.splice(postIndex, 1);
     await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
-    res.status(200).json({ message: "Blog post deleted successfully" });
+    res.status(200).json({ message: "Blogg innlegg Slettet 🤷‍♂️" });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
@@ -143,7 +137,7 @@ router.delete("/delete-comment/:id", async (req, res) => {
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
-    if (!post) return res.status(404).send("Innlegget ble ikke funnet.");
+    if (!post) return res.status(404).send("Innlegget ble ikke funnet 😒");
 
     const commentIndex = post.comments.findIndex(
       (comment) => comment.time === commentTime
@@ -153,7 +147,7 @@ router.delete("/delete-comment/:id", async (req, res) => {
       await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
       res.json({ success: true });
     } else {
-      res.status(404).send("Kommentar ikke funnet.");
+      res.status(404).send("Kommentar ikke funnet 😒");
     }
   } catch (error) {
     res.status(500).send("Server error");

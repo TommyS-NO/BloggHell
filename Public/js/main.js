@@ -31,7 +31,9 @@ async function fetchAndDisplayPosts() {
                 const formattedDate = comment.time
                   .replace("T", " ")
                   .split(".")[0];
-                return `<li><strong>${comment.name}</strong> kommenterte den ${formattedDate}:<br>${comment.content}</li>`;
+                return `<li><strong>${comment.name}</strong> kommenterte den ${formattedDate}:
+                <br/> 
+                ${comment.content}</li>`;
               })
               .join("")
           : "";
@@ -40,6 +42,16 @@ async function fetchAndDisplayPosts() {
     });
 
     postContainer.innerHTML = html;
+
+    // Legg til event listeners etter at innleggene er generert
+    posts.forEach((post) => {
+      document
+        .getElementById(`comment-name-${post.id}`)
+        .addEventListener("input", () => checkCommentInputs(post.id));
+      document
+        .getElementById(`comment-text-${post.id}`)
+        .addEventListener("input", () => checkCommentInputs(post.id));
+    });
   } catch (error) {
     console.error("Error fetching and displaying posts:", error);
   }
@@ -47,16 +59,18 @@ async function fetchAndDisplayPosts() {
 
 function generatePostHtml(post, commentsHtml) {
   const lastEditedHtml = post.lastEdited
-    ? `<p>Sist redigert: ${new Date(post.lastEdited).toLocaleDateString(
-        "no-NB"
-      )}</p>`
+    ? `<p class="date">Sist redigert: ${new Date(
+        post.lastEdited
+      ).toLocaleDateString("no-NB")}</p>`
     : "";
 
   return `
     <div class="post">
         <h2 class="blog-content">${post.title}</h2>
         <p>${post.content}</p>
-        <p>Dato: ${new Date(post.dateCreated).toLocaleDateString("no-NB")}</p>
+        <p class="date">Dato: ${new Date(post.dateCreated).toLocaleDateString(
+          "no-NB"
+        )}</p>
         ${lastEditedHtml}
         <button class="like" onclick="likePost(${post.id})">Like</button> 
         <span id="likes-${post.id}">${post.likes}</span> Likes
@@ -66,16 +80,16 @@ function generatePostHtml(post, commentsHtml) {
             <ul id="comments-${post.id}">
                 ${commentsHtml}
             </ul>
-            <div>
-                Navn: <input type="text" id="comment-name-${
+            <div class="new-comment-section">
+                <strong>Navn:</strong> <input type="text" id="comment-name-${
                   post.id
                 }" class="comment-input" />
-                Kommentar: <textarea id="comment-text-${
+                <strong>Kommentar:</strong> <textarea id="comment-text-${
                   post.id
                 }" class="comment-input"></textarea>
-                <button class="comment" onclick="addComment(${
+                <button class="submitCommentButton" data-post-id="${
                   post.id
-                })">Legg til kommentar</button>
+                }" onclick="addComment(${post.id})">Legg til kommentar</button>
             </div>
         </div>
         <hr />
@@ -150,6 +164,22 @@ async function addComment(postId) {
     commentTextInput.value = "";
   } catch (error) {
     console.error("Error adding comment:", error);
+  }
+}
+
+function checkCommentInputs(postId) {
+  const nameInput = document.getElementById(`comment-name-${postId}`);
+  const commentInput = document.getElementById(`comment-text-${postId}`);
+  const submitButton = document.querySelector(
+    `.submitCommentButton[data-post-id="${postId}"]`
+  );
+
+  if (nameInput.value.trim() !== "" && commentInput.value.trim() !== "") {
+    submitButton.style.backgroundColor = "#4caf50";
+    submitButton.disabled = false;
+  } else {
+    submitButton.style.backgroundColor = "var(--button-comment-color)";
+    submitButton.disabled = true;
   }
 }
 

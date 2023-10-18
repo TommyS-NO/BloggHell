@@ -10,7 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@200&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:wght@300&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/Global_Styles.css" />
+    <link rel="stylesheet" href="/css/Admin_Styles.css" />
   </head>
   <body>
     <header>
@@ -18,18 +25,42 @@
     </header>
 
     <aside class="bio">
-      <img
-        src="/images/Profile_img.png"
-        alt="Profilbilde"
-        class="profile-image"
-        onclick="showLoginPopup()"
-      />
-      <h2>Om Meg</h2>
-      <p>Navn: Bob</p>
-      <p>Alder: 38</p>
-      <p>Yrke: Webutvikler</p>
-      <p>Hobby: Ludo</p>
-      <p>Annet: Elsker kaffe</p>
+      <div id="bioInfo">
+        <img
+          src="/images/Profile_img.png"
+          alt="Profilbilde"
+          class="profile-image"
+          onclick="showLoginPopup()"
+        />
+        <h2>Om Meg</h2>
+        <p>Navn: Bob</p>
+        <p>Alder: 38</p>
+        <p>Yrke: Student</p>
+        <p>Hobby: Ludo</p>
+        <p>Annet: Elsker kaffe</p>
+      </div>
+      <div id="adminCreatePost" style="display: none">
+        <h2>Opprett BloggInnlegg</h2>
+        <form
+          id="adminCreatePostForm"
+          onsubmit="event.preventDefault(); submitNewPost();"
+        >
+          <label for="adminPostTitle">Tittel:</label>
+          <input
+            type="text"
+            id="adminPostTitle"
+            placeholder="Tittel"
+            required
+          />
+          <label for="adminPostContent">Innhold:</label>
+          <textarea
+            id="adminPostContent"
+            placeholder="Innhold"
+            required
+          ></textarea>
+          <input type="submit" value="Opprett innlegg" />
+        </form>
+      </div>
     </aside>
 
     <main>
@@ -37,14 +68,6 @@
       <section id="adminSection" class="admin-feature" style="display: none">
         <h2>Admin Mode</h2>
         <button onclick="adminLogout()">Logg ut</button>
-        <form
-          id="createPostForm"
-          onsubmit="event.preventDefault(); submitNewPost();"
-        >
-          <input type="text" id="postTitle" placeholder="Tittel" required />
-          <textarea id="postContent" placeholder="Innhold" required></textarea>
-          <input type="submit" value="Opprett innlegg" />
-        </form>
         <form
           id="editPostForm"
           style="display: none"

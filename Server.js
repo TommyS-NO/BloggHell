@@ -1,21 +1,25 @@
-// ---------------------
-// Module Imports
-// ---------------------
 require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const session = require("express-session");
+const morgan = require("morgan");
 
-// ---------------------
-// App Initialization
-// ---------------------
 const app = express();
-const PORT = 3234;
+const PORT = 3234; //PostNummer ;)
 
 // ---------------------
 // Middleware Setup
 // ---------------------
+
+app.use(
+  morgan("combined", {
+    skip: function (req, res) {
+      return res.statusCode < 400;
+    },
+  })
+);
+
 // JSON and Form Data Parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,17 +32,17 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-      maxAge: 30 * 60 * 1000, // 30 minutes
+      maxAge: 10 * 60 * 1000, // 10 min
     },
   })
 );
 
-// Static Files Serving
 app.use(express.static(path.join(__dirname, "../BLOGG/public")));
 
 // ---------------------
 // Routes Setup
 // ---------------------
+
 const mainRoutes = require("./Server/Routes/main");
 const adminRoutes = require("./Server/Routes/admin");
 app.use("/", mainRoutes);

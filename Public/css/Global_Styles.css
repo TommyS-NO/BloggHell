@@ -1,22 +1,40 @@
+/* =====================
+   Variables
+   ===================== */
 :root {
-  --primary-bg-color: #162c91;
-  --secondary-bg-color: #f4f4f4;
-  --header-bg-color: #162c91;
-  --footer-bg-color: #162c91;
-  --text-color: #ffffff;
+  --primary-bg-color: #48665c;
+  --secondary-bg-color: #406458;
+  --layout-bg-color: #242834;
   --link-color: inherit;
   --link-hover-color: underline;
-  --comments-bg-color: #e0e0e0;
+  --comments-bg-color: #3b9678;
   --button-like-color: #18b83b;
   --button-comment-color: #c0c0c0;
-  --button-login-color: green;
   --title-color: white;
+  --input-bg-color: #f5f5f5;
+  --input-text-color: #333;
+  --inactive-btn-color: #ccc;
+  --date-color: #9e9e9e;
+}
+
+/* =====================
+     Base Styles
+   ===================== */
+body,
+h1,
+h2,
+h3,
+ul,
+a,
+button,
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
-  font-family: "Young Serif", serif;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   max-width: 100vw;
   overflow-x: hidden;
@@ -27,6 +45,15 @@ body {
   grid-template-rows: auto 1fr auto;
   gap: 0;
   height: 100vh;
+}
+
+h1,
+.highlighted-title {
+  font-family: "Young Serif", serif;
+}
+
+.admin-feature {
+  font-family: "Indie Flower", cursive;
 }
 
 ul {
@@ -41,15 +68,56 @@ a {
 a:hover {
   text-decoration: var(--link-hover-color);
 }
-
-header {
-  grid-column: 1 / span 2;
-  background-color: var(--header-bg-color);
-  padding: 20px 20px;
-  text-align: center;
-  color: var(--text-color);
+p {
+  font-size: 18px;
+  font-family: "Young Serif", serif;
+  color: white;
 }
 
+/* =====================
+     Layout Components
+     ===================== */
+header {
+  grid-column: 1 / span 2;
+  background-color: var(--layout-bg-color);
+  padding: 20px;
+  text-align: center;
+}
+
+.bio {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: var(--secondary-bg-color);
+  padding: 10px 30px;
+  border-right: 1px solid red;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+
+main {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: var(--primary-bg-color);
+  padding: 20px;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+}
+
+footer {
+  grid-column: 1 / span 2;
+  background-color: var(--layout-bg-color);
+  padding: 20px;
+  text-align: center;
+  color: black;
+}
+/* =====================
+   Elements & Components
+   ===================== */
+
+/* Titles & Text */
 .highlighted-title {
   color: red;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
@@ -59,99 +127,139 @@ header h1 {
   color: var(--title-color);
 }
 
-.bio {
-  grid-column: 1;
-  grid-row: 2;
-  background-color: var(--secondary-bg-color);
-  padding: 10px 30px;
-  border-right: 1px solid #ddd;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .bio .profile-image + h2 {
   margin-top: 20px;
 }
 
-main {
-  grid-column: 2;
-  grid-row: 2;
-  background-color: #ffffff;
-  padding: 20px;
-  overflow-y: auto;
-  border-left: 1px solid #ddd;
-}
-
 .blog-content h2 {
+  color: #000;
   text-align: center;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
 }
 
-.comment-author {
-  display: block;
-}
-
-.comment-text {
-  display: block;
-  margin-left: 20px;
-}
-
-.comment-input {
-  width: 80%;
-  margin: 10px auto;
-  display: block;
-}
-textarea.comment-input {
-  min-height: 150px;
-  resize: vertical;
-}
-
 .comments h3 {
-  font-size: 18px;
-  color: #777;
+  font-size: 16px;
+  color: black;
 }
 
+/* Images */
 .profile-image {
   width: 50%;
   display: block;
   margin: 0 auto;
 }
 
-footer {
-  grid-column: 1 / span 2;
-  background-color: var(--footer-bg-color);
-  padding: 20px;
-  text-align: center;
-  color: var(--text-color);
-}
-
+/* Buttons */
 button,
 input[type="submit"] {
-  border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  background-color: var(--btn-bg-color);
+  color: white;
 }
 
 button:hover,
 input[type="submit"]:hover {
-  background-color: #555;
+  background-color: #333;
   color: #fff;
 }
 
 button.like {
   background-color: var(--button-like-color);
-  color: white;
 }
 
-button.comment {
+button.comment,
+button.post {
   background-color: var(--button-comment-color);
 }
 
+button.edit,
+button.delete {
+  margin-top: 10px;
+  padding: 5px 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.edit:hover,
+button.delete:hover {
+  background-color: #fff;
+  color: #555;
+}
+
+button.delete {
+  background-color: red;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Comments */
+.new-comment-section {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.comment-author,
+.comment-text {
+  display: block;
+}
+
+.comment-text {
+  margin-left: 20px;
+}
+
+.comment-input {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px;
+  width: 60%;
+  background-color: var(--comments-bg-color);
+  margin: 10px auto;
+  display: block;
+}
+
+textarea.comment-input {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.comment-delete {
+  background-color: red;
+  color: white;
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 2px 5px;
+}
+
+/* Posts */
+.post-comment {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.post-comment strong {
+  font-weight: bold;
+}
+.post-last-edited,
+.post-likes {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.post-date,
+.post-last-edited {
+  color: var(--date-color);
+}
+
+/* Popups */
 .login-popup {
   position: fixed;
   top: 50%;
@@ -185,11 +293,15 @@ button.comment {
 }
 
 .login-popup input[type="submit"] {
-  background-color: var(--button-login-color);
-  color: white;
-  border-radius: 5px;
   display: block;
-  margin: 20px auto 0;
+  margin: 20px auto;
+  background-color: var(--button-like-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .login-popup input[type="text"],
@@ -199,4 +311,58 @@ button.comment {
   margin-bottom: 10px;
   width: 100%;
   padding: 5px;
+}
+
+/* Admin Specific */
+#adminCreatePostForm input[type="submit"] {
+  background-color: var(--btn-bg-color);
+}
+
+#adminCreatePostForm textarea {
+  resize: none;
+  height: 200px;
+  width: 600px;
+}
+
+#adminCreatePostForm input[type="submit"]:disabled {
+  background-color: var(--inactive-btn-color);
+}
+
+#adminCreatePostForm input[type="submit"]:not(:disabled) {
+  background-color: #4caf50;
+}
+
+.edit-buttons-container {
+  display: inline-flex;
+  gap: 10px;
+}
+
+button.edit,
+button.admin-save-button {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 10px;
+}
+
+button.delete,
+button.cancel,
+button.admin-abort-button {
+  background-color: red;
+  color: white;
+}
+
+.admin-logout-button {
+  color: red;
+  font-size: 1.2em;
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-logout-button:hover {
+  background-color: red;
+  color: white;
+}
+.date {
+  font-size: 0.9em;
+  color: var(--date-color);
 }

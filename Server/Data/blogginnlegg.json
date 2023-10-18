@@ -1,67 +1,89 @@
 [
   {
-    "id": 1697312934442,
-    "title": "dasdsa",
-    "content": "dasdsad",
-    "dateCreated": "2023-10-14T19:48:54.442Z",
-    "lastEdited": null,
+    "id": 1697667956718,
+    "title": "EGIL",
+    "content": "Husk å Opprett en .env fil da jeg har lagt denne inn i gitignore filen så blir ikke denne lastet opp.. :) ADMIN_USERNAME=Admin ADMIN_PASSWORD=Gokstad2023 SESSION_SECRET=SECRET_KEY",
+    "dateCreated": "2023-10-18T22:25:56.718Z",
+    "lastEdited": "2023-10-18T22:26:48.567Z",
     "views": 0,
-    "likes": 0,
-    "comments": []
-  },
-  {
-    "id": 1697307202283,
-    "title": "gfgfgf",
-    "content": "gdfgfdgfdg",
-    "dateCreated": "2023-10-14T18:13:22.283Z",
-    "lastEdited": null,
-    "views": 0,
-    "likes": 12,
+    "likes": 1,
     "comments": [
       {
-        "name": "ghfhfgh",
-        "time": "2023-10-14T19:47:40.382Z",
-        "content": "hfghfghfgh"
+        "name": "gdgdf",
+        "time": "2023-10-18T22:41:41.537Z",
+        "content": "gdfgfd"
+      },
+      {
+        "name": "fdfd",
+        "time": "2023-10-18T22:47:51.543Z",
+        "content": "fdfd"
       }
     ]
   },
   {
-    "id": 1697058555609,
-    "title": "TEst fra Admin Mdasdsdode3",
-    "content": "2222111223\nRedigert v3 v5",
-    "dateCreated": "2023-10-11T21:09:15.609Z",
-    "lastEdited": "2023-10-14T07:39:33.818Z",
+    "id": 1197574926936,
+    "title": "Blogg 1639",
+    "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus.",
+    "dateCreated": "2023-10-17T20:35:26.936Z",
+    "lastEdited": "2023-10-18T20:24:02.220Z",
     "views": 0,
-    "likes": 11,
+    "likes": 1,
+    "comments": [
+      {
+        "name": "bib",
+        "time": "2023-10-18T22:24:28.552Z",
+        "content": "bibib"
+      }
+    ]
+  },
+  {
+    "id": 1696710510661,
+    "title": "Blogg 1638",
+    "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.pjkp",
+    "dateCreated": "2023-10-15 20:27:30.852",
+    "lastEdited": "2023-10-17T20:35:08.480Z",
+    "views": 0,
+    "likes": [],
     "comments": []
   },
   {
-    "id": 1697058179028,
-    "title": "TEst fra Admin ModeREDIGERT",
-    "content": "REdigert for å se om tiden fungerer ",
-    "dateCreated": "2023-10-11T21:02:59.028Z",
+    "id": 1696710510262,
+    "title": "Test4 bloggen",
+    "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.pjkp",
+    "dateCreated": "2023-10-06 20:27:30.852",
+    "lastEdited": "2023-10-12 07:40:11.590 ",
     "views": 0,
-    "likes": 9,
+    "likes": [],
     "comments": []
   },
   {
-    "id": 1696710450662,
+    "id": 1696720510662,
+    "title": "Test3 bloggenrrfewfdsfdfd",
+    "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.pjkp",
+    "dateCreated": "2023-10-06 20:27:30.852",
+    "lastEdited": "2023-10-18T11:13:50.361Z",
+    "views": 0,
+    "likes": [],
+    "comments": []
+  },
+  {
+    "id": 1696710510662,
     "title": "Test2 bloggen",
-    "content": "Lorem ipdsum dolor sit amet, dsadadasdsdasdas\n\nREDIGERT 13:22\nconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.\n\nREDIGERT",
-    "dateCreated": "2023-10-07T20:27:30.852Z",
-    "lastEdited": "2023-10-12T12:03:52.102Z",
+    "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.pjkp",
+    "dateCreated": "2023-10-06 20:27:30.852",
+    "lastEdited": "2023-10-12 07:40:11.590 ",
     "views": 0,
-    "likes": 7,
+    "likes": [],
     "comments": []
   },
   {
     "id": 1696710550662,
-    "title": "Test3 bloggen",
+    "title": "Test1 bloggen",
     "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.pjkp",
-    "dateCreated": "2023-10-06T20:27:30.852Z",
-    "lastEdited": "2023-10-14T07:39:11.590Z",
+    "dateCreated": "2023-10-06 20:27:30.852",
+    "lastEdited": "2023-10-14 07:39:11.590 ",
     "views": 0,
-    "likes": 5,
+    "likes": [],
     "comments": []
   }
 ]

@@ -1,34 +1,54 @@
-body {
-  background-color: var(--admin-bg-color);
-}
+/* =====================
+   Layout and Structure
+   ===================== */
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--header-bg-color);
-  color: var(--text-color);
 }
 
-header .admin-logout {
-  background-color: var(--btn-bg-color);
-  padding: 5px 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: var(--text-color);
+.bio {
+  font-family: "Indie Flower", cursive;
+}
+
+.bio h2 {
+  margin-top: 20px;
+  color: black;
+}
+.bio p {
+  font-size: 20px;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  background-color: var(--main-bg-color);
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 section {
   margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  color: var(--title-color);
+  font-family: "Indie Flower", cursive;
+}
+
+h3 {
+  font-family: "Young Serif", serif;
+}
+
+/* =====================
+   Admin Features
+   ===================== */
+header .admin-logout {
+  background-color: red;
+  font-size: 1.1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
 }
 
 .post-management {
@@ -50,20 +70,102 @@ section {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  background-color: var(--post-item-bg-color);
 }
 
-.post-management .post-list .post-title {
-  font-size: 20px;
+.post-management .post-list .post-title,
+.post-management .post-list .post-date,
+.post-management .post-list .post-likes {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
-.post-management .post-list .post-date {
-  font-size: 14px;
-  color: #888;
+/* =====================
+   Buttons & Inputs
+   ===================== */
+button.edit,
+button.delete,
+button.save,
+button.cancel {
+  margin-top: 10px;
+  padding: 5px 15px;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-footer {
-  background-color: var(--footer-bg-color);
-  color: var(--text-color);
+button.edit {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 10px;
+}
+
+button.delete,
+button.cancel {
+  background-color: red;
+  color: white;
+}
+
+button.save {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 10px;
+}
+
+button.save:hover {
+  background-color: #45a049;
+}
+
+button.cancel:hover {
+  background-color: #da190b;
+}
+
+.comment-delete {
+  background-color: red;
+  color: white;
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 2px 5px;
+}
+
+/* =====================
+   Admin Create Post Styles
+   ===================== */
+#adminCreatePostForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#adminCreatePostForm label {
+  font-weight: bold;
+}
+
+#adminCreatePostForm input[type="text"],
+#adminCreatePostForm textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#adminCreatePostForm input[type="submit"] {
+  align-self: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#adminCreatePostForm input[type="submit"]:hover {
+  background-color: #333;
 }

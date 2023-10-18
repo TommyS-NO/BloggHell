@@ -43,6 +43,7 @@ router.post("/like/:id", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
+
 //Comment
 router.post("/comment/:id", async (req, res) => {
   try {
