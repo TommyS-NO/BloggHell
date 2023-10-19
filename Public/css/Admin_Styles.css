@@ -169,3 +169,6 @@ button.cancel:hover {
 #adminCreatePostForm input[type="submit"]:hover {
   background-color: #333;
 }
+sub {
+  background-color: var(--button-comment-color);
+}

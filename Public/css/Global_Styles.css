@@ -126,7 +126,9 @@ footer {
 header h1 {
   color: var(--title-color);
 }
-
+.bio .profile-image {
+  cursor: pointer;
+}
 .bio .profile-image + h2 {
   margin-top: 20px;
 }

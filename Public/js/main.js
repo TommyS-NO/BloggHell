@@ -30,6 +30,7 @@ async function fetchAndDisplayPosts() {
               .map((comment) => {
                 const formattedDate = comment.time
                   .replace("T", " ")
+                  .replace("Z", " ")
                   .split(".")[0];
                 return `<li><strong>${comment.name}</strong> kommenterte den ${formattedDate}:
                 <br/> 
@@ -53,7 +54,7 @@ async function fetchAndDisplayPosts() {
         .addEventListener("input", () => checkCommentInputs(post.id));
     });
   } catch (error) {
-    console.error("Error fetching and displaying posts:", error);
+    console.error("Error fetching and displaying posts💩", error);
   }
 }
 
@@ -125,19 +126,19 @@ async function addComment(postId) {
 
   // Sjekk om feltene er tomme
   if (!commentName.trim() || !commentText.trim()) {
-    alert("Navn og Kommentar må fylles ut.");
+    alert("Navn og Kommentar må fylles ut🫵");
     return;
   }
 
   // Validering av navn
   if (!commentName.match(validNameChars)) {
-    alert("Ingen spesialtegn tillatt i navn.");
+    alert("Ingen spesialtegn tillatt i navn🫵");
     return;
   }
 
-  // Validering av kommentartekst
+  // Validering av kommentar
   if (!commentText.match(validCommentChars)) {
-    alert("Ugyldige tegn i kommentaren.");
+    alert("Ugyldige tegn i kommentaren🫵");
     return;
   }
 
@@ -159,7 +160,7 @@ async function addComment(postId) {
     newComment.innerHTML = `<strong>${data.name}</strong> kommenterte den ${data.time}: ${data.content}`;
     commentList.appendChild(newComment);
 
-    // Tøm feltene etter at kommentaren er lagt til
+    // Tøm feltene
     commentNameInput.value = "";
     commentTextInput.value = "";
   } catch (error) {

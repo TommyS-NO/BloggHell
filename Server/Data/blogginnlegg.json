@@ -4,21 +4,10 @@
     "title": "EGIL",
     "content": "Husk å Opprett en .env fil da jeg har lagt denne inn i gitignore filen så blir ikke denne lastet opp.. :) ADMIN_USERNAME=Admin ADMIN_PASSWORD=Gokstad2023 SESSION_SECRET=SECRET_KEY",
     "dateCreated": "2023-10-18T22:25:56.718Z",
-    "lastEdited": "2023-10-18T22:26:48.567Z",
+    "lastEdited": "2023-10-19T11:12:43.586Z",
     "views": 0,
     "likes": 1,
-    "comments": [
-      {
-        "name": "gdgdf",
-        "time": "2023-10-18T22:41:41.537Z",
-        "content": "gdfgfd"
-      },
-      {
-        "name": "fdfd",
-        "time": "2023-10-18T22:47:51.543Z",
-        "content": "fdfd"
-      }
-    ]
+    "comments": []
   },
   {
     "id": 1197574926936,
@@ -27,14 +16,8 @@
     "dateCreated": "2023-10-17T20:35:26.936Z",
     "lastEdited": "2023-10-18T20:24:02.220Z",
     "views": 0,
-    "likes": 1,
-    "comments": [
-      {
-        "name": "bib",
-        "time": "2023-10-18T22:24:28.552Z",
-        "content": "bibib"
-      }
-    ]
+    "likes": [],
+    "comments": []
   },
   {
     "id": 1696710510661,

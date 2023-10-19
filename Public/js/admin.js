@@ -23,10 +23,10 @@ async function adminLogin(username, password) {
       showAdminFeatures();
       loadAdminPosts();
     } else {
-      alert("Feil Brukernavn eller Passord.");
+      alert("Feil Brukernavn eller Passord😒");
     }
   } catch (error) {
-    console.error("Error, Ingen Tilgang:", error);
+    console.error("Error, Ingen Tilgang🤫", error);
   }
 }
 
@@ -101,7 +101,7 @@ function submitNewPost() {
   const content = document.getElementById("adminPostContent").value.trim();
 
   if (!title || !content) {
-    alert("Vennligst fyll ut både tittel og innhold‼️.");
+    alert("Vennligst fyll ut både tittel og innhold 🫵");
     return;
   }
 
@@ -124,7 +124,7 @@ async function createPost(title, content) {
       alert("Nytt Innlegg Lastet opp😃💵");
       loadAdminPosts();
     } else {
-      alert("Error creating post.");
+      alert("Error creating post💩");
     }
   } catch (error) {
     console.error("Error creating post:", error);
@@ -132,7 +132,7 @@ async function createPost(title, content) {
 }
 function submitEditPost(postId, title, content) {
   const confirmation = confirm(
-    "Er du sikker på at du vil redigere dette innlegget? 🤷‍♂️"
+    "Er du sikker på at du vil redigere dette innlegget? 🤔"
   );
   if (!confirmation) return;
   updatePost(postId, title, content);
@@ -160,7 +160,7 @@ async function updatePost(id, title, content) {
 }
 
 async function deletePost(id) {
-  const confirmation = confirm("Er du sikker på at du vil slette?🤷‍♂️");
+  const confirmation = confirm("Er du sikker på at du vil slette?🤔");
   if (!confirmation) return;
   try {
     const response = await fetch(`/admin/delete-post/${id}`, {
@@ -171,7 +171,7 @@ async function deletePost(id) {
       alert("Poff 💣 Borte.");
       loadAdminPosts();
     } else {
-      alert("Error deleting post.");
+      alert("Error deleting post💩");
     }
   } catch (error) {
     console.error("Error deleting post:", error);
@@ -288,7 +288,7 @@ async function showEditPostForm(postId) {
 }
 
 async function deleteComment(postId, commentTime) {
-  const confirmation = confirm("Er du sikker på at du vil slette?");
+  const confirmation = confirm("Er du sikker på at du vil slette?🤔");
   if (!confirmation) return;
   try {
     const response = await fetch(
@@ -302,7 +302,7 @@ async function deleteComment(postId, commentTime) {
       alert("Kommentar slettet");
       loadAdminPosts();
     } else {
-      alert("Feil ved sletting av kommentar.");
+      alert("Feil ved sletting av kommentar💩");
     }
   } catch (error) {
     console.error("Error deleting comment:", error);

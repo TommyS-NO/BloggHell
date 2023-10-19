@@ -31,7 +31,7 @@ router.post("/login", (req, res) => {
     req.session.isAdmin = true;
     res.status(200).json({ message: "Admin Logget Inn😊" });
   } else {
-    res.status(401).json({ error: "Feil Brukernavn eller Passord" });
+    res.status(401).json({ error: "Feil Brukernavn eller Passord 🫵" });
   }
 });
 
@@ -59,7 +59,7 @@ router.get("/get-post/:id", async (req, res) => {
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
-    if (!post) return res.status(404).json({ error: "Innlegg ikke funnet" });
+    if (!post) return res.status(404).json({ error: "Innlegg ikke funnet💩" });
     res.status(200).json(post);
   } catch (error) {
     res.status(500).json({ error: "Server error" });
