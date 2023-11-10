@@ -6,7 +6,7 @@
     "dateCreated": "2023-10-18T22:25:56.718Z",
     "lastEdited": "2023-10-19T11:12:43.586Z",
     "views": 0,
-    "likes": 1,
+    "likes": 3,
     "comments": []
   },
   {
@@ -46,8 +46,14 @@
     "dateCreated": "2023-10-06 20:27:30.852",
     "lastEdited": "2023-10-18T11:13:50.361Z",
     "views": 0,
-    "likes": [],
-    "comments": []
+    "likes": 1,
+    "comments": [
+      {
+        "name": "jhhh",
+        "time": "2023-10-19T18:36:01.870Z",
+        "content": "hjh"
+      }
+    ]
   },
   {
     "id": 1696710510662,
