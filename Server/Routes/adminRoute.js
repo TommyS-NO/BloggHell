@@ -24,10 +24,9 @@ function ensureAdmin(req, res, next) {
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
 
-  if (
-    username === process.env.ADMIN_USERNAME &&
-    password === process.env.ADMIN_PASSWORD
-  ) {
+  // Hardkodede admin-legitimasjonsopplysninger for enkelhetens skyld
+
+  if (username === "admin" && password === "Gokstad2023") {
     req.session.isAdmin = true;
     res.status(200).json({ message: "Admin Logget Inn😊" });
   } else {
@@ -39,6 +38,7 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
+
 // ---------------------
 // Post CRUD Routes
 // ---------------------
