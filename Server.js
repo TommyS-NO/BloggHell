@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
@@ -6,7 +5,7 @@ const session = require("express-session");
 const morgan = require("morgan");
 
 const app = express();
-const PORT = 3234; //PostNummer ;)
+const PORT = 3234;
 
 // ---------------------
 // Middleware Setup
@@ -28,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: "hemmelig",
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -43,8 +42,9 @@ app.use(express.static(path.join(__dirname, "../BLOGG/public")));
 // Routes Setup
 // ---------------------
 
-const mainRoutes = require("./Server/Routes/main");
-const adminRoutes = require("./Server/Routes/admin");
+const mainRoutes = require("./Server/Routes/mainRoute");
+const adminRoutes = require("./Server/Routes/adminRoute");
+
 app.use("/", mainRoutes);
 app.use("/admin", adminRoutes);
 
