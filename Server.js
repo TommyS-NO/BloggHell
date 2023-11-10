@@ -2,7 +2,6 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const session = require("express-session");
-const morgan = require("morgan");
 
 const app = express();
 const PORT = 3234;
@@ -10,14 +9,6 @@ const PORT = 3234;
 // ---------------------
 // Middleware Setup
 // ---------------------
-
-app.use(
-  morgan("combined", {
-    skip: function (req, res) {
-      return res.statusCode < 400;
-    },
-  })
-);
 
 // JSON and Form Data Parsing
 app.use(express.json());
@@ -36,7 +27,7 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, "../BLOGG/public")));
+app.use(express.static(path.join(__dirname, "../blogghell/Public/")));
 
 // ---------------------
 // Routes Setup
@@ -62,7 +53,6 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: "Server error", details: err.message });
 });
-
 // ---------------------
 // Start Server
 // ---------------------

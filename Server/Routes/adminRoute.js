@@ -4,6 +4,7 @@ const fs = require("fs").promises;
 const path = require("path");
 
 const postsDataPath = path.join(__dirname, "../Data/blogginnlegg.json");
+const adminDataPath = path.join(__dirname, "../Data/admin.json");
 
 // ---------------------
 // Middleware Functions
@@ -21,16 +22,21 @@ function ensureAdmin(req, res, next) {
 // Admin Authentication Routes
 // ---------------------
 
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
-  // Hardkodede admin-legitimasjonsopplysninger for enkelhetens skyld
+  try {
+    const adminData = await fs.readFile(adminDataPath, "utf-8");
+    const admin = JSON.parse(adminData);
 
-  if (username === "admin" && password === "Gokstad2023") {
-    req.session.isAdmin = true;
-    res.status(200).json({ message: "Admin Logget Inn😊" });
-  } else {
-    res.status(401).json({ error: "Feil Brukernavn eller Passord 🫵" });
+    if (username === admin.username && password === admin.password) {
+      req.session.isAdmin = true;
+      res.status(200).json({ message: "Admin Logget Inn😊" });
+    } else {
+      res.status(401).json({ error: "Feil Brukernavn eller Passord 🫵" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
   }
 });
 
@@ -38,7 +44,6 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
-
 // ---------------------
 // Post CRUD Routes
 // ---------------------

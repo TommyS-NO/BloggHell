@@ -1,20 +1,20 @@
 [
   {
-    "id": 1697667956718,
-    "title": "EGIL",
-    "content": "Husk å Opprett en .env fil da jeg har lagt denne inn i gitignore filen så blir ikke denne lastet opp.. :) ADMIN_USERNAME=Admin ADMIN_PASSWORD=Gokstad2023 SESSION_SECRET=SECRET_KEY",
-    "dateCreated": "2023-10-18T22:25:56.718Z",
-    "lastEdited": "2023-10-19T11:12:43.586Z",
+    "id": 1699620591612,
+    "title": "fsdfsd",
+    "content": "dasdad",
+    "dateCreated": "2023-11-10T12:49:51.612Z",
+    "lastEdited": null,
     "views": 0,
-    "likes": 3,
+    "likes": 1,
     "comments": []
   },
   {
     "id": 1197574926936,
-    "title": "Blogg 1639",
+    "title": "Blogg 1639 Redigert",
     "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus.",
     "dateCreated": "2023-10-17T20:35:26.936Z",
-    "lastEdited": "2023-10-18T20:24:02.220Z",
+    "lastEdited": "2023-11-10T12:49:47.014Z",
     "views": 0,
     "likes": [],
     "comments": []
