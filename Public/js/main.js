@@ -142,7 +142,7 @@ async function addComment(postId) {
   }
 
   try {
-    const response = await fetch(`/comment/${postId}`, {
+    const response = await fetch(`/api/blogginnlegg/comment/${postId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

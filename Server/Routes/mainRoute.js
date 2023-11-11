@@ -46,9 +46,9 @@ router.post("/like/:id", async (req, res) => {
 });
 
 // Comment
-router.post("/comment/:id", async (req, res) => {
+router.post("/comment/:postId", async (req, res) => {
   try {
-    const postId = parseInt(req.params.id);
+    const postId = parseInt(req.params.postId);
     const { name, time, content } = req.body;
     const comment = { name, time, content };
 
