@@ -18,7 +18,7 @@ function hideLoginPopup() {
 
 async function fetchAndDisplayPosts() {
   try {
-    const response = await fetch("/posts");
+    const response = await fetch("/api/blogginnlegg");
     const posts = await response.json();
     const postContainer = document.getElementById("postContainer");
     let html = "";
@@ -44,7 +44,6 @@ async function fetchAndDisplayPosts() {
 
     postContainer.innerHTML = html;
 
-    // Legg til event listeners etter at innleggene er generert
     posts.forEach((post) => {
       document
         .getElementById(`comment-name-${post.id}`)
@@ -104,7 +103,7 @@ function generatePostHtml(post, commentsHtml) {
 
 async function likePost(postId) {
   try {
-    const response = await fetch(`/like/${postId}`, {
+    const response = await fetch(`/api/blogginnlegg/like/${postId}`, {
       method: "POST",
     });
     const data = await response.json();

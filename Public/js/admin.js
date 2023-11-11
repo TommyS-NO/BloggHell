@@ -10,7 +10,7 @@ function handleAdminLogin() {
 
 async function adminLogin(username, password) {
   try {
-    const response = await fetch("/admin/login", {
+    const response = await fetch("/api/admin/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ async function adminLogin(username, password) {
 
 async function adminLogout() {
   try {
-    const response = await fetch("/admin/logout");
+    const response = await fetch("/api/admin/logout");
     if (response.ok) {
       hideAdminFeatures();
       location.reload();
@@ -112,7 +112,7 @@ function submitNewPost() {
 
 async function createPost(title, content) {
   try {
-    const response = await fetch("/admin/create-post", {
+    const response = await fetch("/api/admin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -140,7 +140,7 @@ function submitEditPost(postId, title, content) {
 
 async function updatePost(id, title, content) {
   try {
-    const response = await fetch(`/admin/update-post/${id}`, {
+    const response = await fetch(`/api/admin/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -163,7 +163,7 @@ async function deletePost(id) {
   const confirmation = confirm("Er du sikker på at du vil slette?🤔");
   if (!confirmation) return;
   try {
-    const response = await fetch(`/admin/delete-post/${id}`, {
+    const response = await fetch(`/api/admin/${id}`, {
       method: "DELETE",
     });
 
@@ -180,7 +180,7 @@ async function deletePost(id) {
 
 async function loadAdminPosts() {
   try {
-    const response = await fetch("/admin/get-all-posts");
+    const response = await fetch("/api/blogginnlegg");
     const posts = await response.json();
     const postContainer = document.getElementById("postContainer");
     postContainer.innerHTML = "";
@@ -292,7 +292,7 @@ async function deleteComment(postId, commentTime) {
   if (!confirmation) return;
   try {
     const response = await fetch(
-      `/admin/delete-comment/${postId}?time=${commentTime}`,
+      `/api/admin/delete-comment/${postId}?time=${commentTime}`, // `/api/kommentarer/${postId}?time=${commentTime}`
       {
         method: "DELETE",
       }

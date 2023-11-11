@@ -48,7 +48,7 @@ router.get("/logout", (req, res) => {
 // Post CRUD Routes
 // ---------------------
 
-router.get("/get-all-posts", async (req, res) => {
+router.get("/", ensureAdmin, async (req, res) => {
   try {
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
@@ -58,20 +58,20 @@ router.get("/get-all-posts", async (req, res) => {
   }
 });
 
-router.get("/get-post/:id", async (req, res) => {
+router.get("/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
     const data = await fs.readFile(postsDataPath, "utf-8");
     const posts = JSON.parse(data);
     const post = posts.find((p) => p.id === postId);
-    if (!post) return res.status(404).json({ error: "Innlegg ikke funnet💩" });
+    if (!post) return res.status(404).json({ error: "Innlegg ikke funnet" });
     res.status(200).json(post);
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
 });
 
-router.post("/create-post", ensureAdmin, async (req, res) => {
+router.post("/", ensureAdmin, async (req, res) => {
   try {
     const { title, content } = req.body;
     const newPost = {
@@ -95,7 +95,7 @@ router.post("/create-post", ensureAdmin, async (req, res) => {
   }
 });
 
-router.put("/update-post/:id", ensureAdmin, async (req, res) => {
+router.put("/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
     const { title, content } = req.body;
@@ -115,7 +115,7 @@ router.put("/update-post/:id", ensureAdmin, async (req, res) => {
   }
 });
 
-router.delete("/delete-post/:id", ensureAdmin, async (req, res) => {
+router.delete("/:id", ensureAdmin, async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
     const data = await fs.readFile(postsDataPath, "utf-8");

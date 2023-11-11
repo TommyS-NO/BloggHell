@@ -5,13 +5,11 @@ const path = require("path");
 
 const postsDataPath = path.join(__dirname, "../Data/blogginnlegg.json");
 
-// Hjelpefunksjon for å lese og parse blogginnlegg
 async function readPosts() {
   const data = await fs.readFile(postsDataPath, "utf-8");
   return JSON.parse(data);
 }
 
-// Hjelpefunksjon for å skrive blogginnlegg til fil
 async function writePosts(posts) {
   await fs.writeFile(postsDataPath, JSON.stringify(posts, null, 2));
 }
@@ -21,7 +19,7 @@ async function writePosts(posts) {
 // ---------------------
 
 // GET all Posts
-router.get("/posts", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const posts = await readPosts();
     res.json(posts);
@@ -66,11 +64,6 @@ router.post("/comment/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
-});
-
-// Main Page Route
-router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../Views/index.html"));
 });
 
 module.exports = router;

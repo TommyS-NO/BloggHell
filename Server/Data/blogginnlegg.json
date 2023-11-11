@@ -1,32 +1,22 @@
 [
   {
-    "id": 1699620591612,
-    "title": "fsdfsd",
-    "content": "dasdad",
-    "dateCreated": "2023-11-10T12:49:51.612Z",
-    "lastEdited": null,
+    "id": 1699689478426,
+    "title": "Innleggets Tittel Er nå Redigert i POSTMAN",
+    "content": "Innleggets Innhold",
+    "dateCreated": "2023-11-11T07:57:58.426Z",
+    "lastEdited": "2023-11-11T08:03:17.242Z",
     "views": 0,
-    "likes": 1,
-    "comments": []
-  },
-  {
-    "id": 1197574926936,
-    "title": "Blogg 1639 Redigert",
-    "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus.",
-    "dateCreated": "2023-10-17T20:35:26.936Z",
-    "lastEdited": "2023-11-10T12:49:47.014Z",
-    "views": 0,
-    "likes": [],
+    "likes": 6,
     "comments": []
   },
   {
     "id": 1696710510661,
-    "title": "Blogg 1638",
+    "title": "Blogg 1638 Redigert idag igjendasdasdasd",
     "content": "Loreolor sit amet, consecteuytutydasdasdutur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat consequat mauris nunc congue. Eu nisl nunc mi ipsum faucibus. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ut porttitor leo a diam sollicitudin tempor id. Aliquam etiam erat velit scelerisque. Morbi tristique senectus et netus et malesuada fames ac. Dui ut ornare lectus sit amet est placerat in egestas. Augue mauris augue neque gravida in fermentum et. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo duis ut diam quam nulla porttitor massa id neque. Nulla porttitor massa id neque aliquam vestibulum morbi. Quis hendrerit dolor magna eget est lorem ipsum. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Non odio euismod lacinia at.pjkp",
     "dateCreated": "2023-10-15 20:27:30.852",
-    "lastEdited": "2023-10-17T20:35:08.480Z",
+    "lastEdited": "2023-11-11T07:53:21.903Z",
     "views": 0,
-    "likes": [],
+    "likes": 0,
     "comments": []
   },
   {
@@ -36,7 +26,7 @@
     "dateCreated": "2023-10-06 20:27:30.852",
     "lastEdited": "2023-10-12 07:40:11.590 ",
     "views": 0,
-    "likes": [],
+    "likes": 0,
     "comments": []
   },
   {
@@ -46,14 +36,8 @@
     "dateCreated": "2023-10-06 20:27:30.852",
     "lastEdited": "2023-10-18T11:13:50.361Z",
     "views": 0,
-    "likes": 1,
-    "comments": [
-      {
-        "name": "jhhh",
-        "time": "2023-10-19T18:36:01.870Z",
-        "content": "hjh"
-      }
-    ]
+    "likes": 0,
+    "comments": []
   },
   {
     "id": 1696710510662,
@@ -62,7 +46,7 @@
     "dateCreated": "2023-10-06 20:27:30.852",
     "lastEdited": "2023-10-12 07:40:11.590 ",
     "views": 0,
-    "likes": [],
+    "likes": 0,
     "comments": []
   },
   {
@@ -72,7 +56,7 @@
     "dateCreated": "2023-10-06 20:27:30.852",
     "lastEdited": "2023-10-14 07:39:11.590 ",
     "views": 0,
-    "likes": [],
+    "likes": 0,
     "comments": []
   }
 ]
