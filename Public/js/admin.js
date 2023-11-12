@@ -112,7 +112,7 @@ function submitNewPost() {
 
 async function createPost(title, content) {
   try {
-    const response = await fetch("/api/admin", {
+    const response = await fetch("/api/admin/blogginnlegg", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -140,7 +140,7 @@ function submitEditPost(postId, title, content) {
 
 async function updatePost(id, title, content) {
   try {
-    const response = await fetch(`/api/admin/${id}`, {
+    const response = await fetch(`/api/admin/blogginnlegg/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -163,7 +163,7 @@ async function deletePost(id) {
   const confirmation = confirm("Er du sikker på at du vil slette?🤔");
   if (!confirmation) return;
   try {
-    const response = await fetch(`/api/admin/${id}`, {
+    const response = await fetch(`/api/admin/blogginnlegg/${id}`, {
       method: "DELETE",
     });
 

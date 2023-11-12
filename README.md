@@ -2,16 +2,6 @@
 
 BloggHell er en enkel bloggapplikasjon som lar brukere lese, like og kommentere på innlegg, mens administratorer kan opprette, redigere og slette innlegg/Kommentarer.
 
-## NB:
-
-//////////////////////////////////////////////////////
-
-- OPPRETT en .env fil for innlogging av Admin Rollen.
--
-- ADMIN_USERNAME= Admin
-- ADMIN_PASSWORD=\***\*\*\*\***
-- SESSION_SECRET=SECRET_KEY
-
 - **Brukere**:
 
   - Les innlegg
@@ -19,6 +9,7 @@ BloggHell er en enkel bloggapplikasjon som lar brukere lese, like og kommentere 
   - Legg til kommentarer
 
 - **Administratorer**:
+  - Logg Inn med Brukernavn og Passord (admin.json)
   - Opprett innlegg
   - Rediger innlegg
   - Slett innlegg
@@ -30,7 +21,7 @@ BloggHell er en enkel bloggapplikasjon som lar brukere lese, like og kommentere 
 2. Naviger til prosjektmappen: `cd BloggHell`
 3. Installer avhengigheter: `npm install`
 4. Start serveren: `npm start`
-5. Åpne nettleseren og gå til `http://localhost:3234`
+5. Åpne nettleseren og gå til `http://localhost:8080`
 
 ### Endepunkter:
 
