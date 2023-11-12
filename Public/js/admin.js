@@ -292,7 +292,7 @@ async function deleteComment(postId, commentTime) {
   if (!confirmation) return;
   try {
     const response = await fetch(
-      `/api/admin/delete-comment/${postId}?time=${commentTime}`, // `/api/kommentarer/${postId}?time=${commentTime}`
+      `/api/admin/delete-comment/${postId}?time=${commentTime}`,
       {
         method: "DELETE",
       }
