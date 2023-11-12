@@ -2,13 +2,14 @@
 
 BloggHell er en enkel bloggapplikasjon som lar brukere lese, like og kommentere på innlegg, mens administratorer kan opprette, redigere og slette innlegg/Kommentarer.
 
-- **Brukere**:
+- **Brukere**
 
   - Les innlegg
   - Like innlegg
   - Legg til kommentarer
 
-- **Administratorer**:
+- **Administratorer**
+
   - Logg Inn med Brukernavn og Passord (admin.json)
   - Opprett innlegg
   - Rediger innlegg
@@ -25,7 +26,8 @@ BloggHell er en enkel bloggapplikasjon som lar brukere lese, like og kommentere 
 
 ### Endepunkter:
 
-- **GET** `/posts`: Hent alle innlegg
-- **POST** `/admin/create-post`: Opprett et nytt innlegg
-- **PUT** `/admin/update-post/:id`: Oppdater et eksisterende innlegg
-- **DELETE** `/admin/delete-post/:id`: Slett et innlegg
+- **GET** `http://localhost:8080/api/blogginnlegg`: Hent alle innlegg
+- **GET** `http://localhost:8080/api/admin/blogginnlegg/:id`: Hent 1 Innlegg
+- **POST** `http://localhost:8080/api/admin/blogginnlegg`: Opprett et nytt innlegg
+- **PUT** `http://localhost:8080/api/admin/blogginnlegg/:id`: Oppdater
+- **DELETE** `http://localhost:8080/api/admin/blogginnlegg/:id`: Slett et innlegg
